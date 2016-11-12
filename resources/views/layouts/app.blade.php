@@ -43,9 +43,9 @@
             <!-- End Responsive -->
             <!-- Main Menu -->
             <!-- Menu Left -->
+            @if (Route::has('login'))
             <div id="menu">
                 <ul>
-                @if (Route::has('login'))
                     <li><a href="{{ url('/feed') }}">FEED</a></li>
                     <li>
                         <a href="#" class="category_menu">CATEGORY

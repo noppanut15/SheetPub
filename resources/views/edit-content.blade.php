@@ -28,11 +28,11 @@
 			<div class="register animated bounceInUp">
 				<ul>
 					<li>
-						<h1>NEW SHEET!</h1>
+						<h1>EDIT SHEET!</h1>
 					</li>
 					<li>
 						<h2>TITLE</h2>
-						<input class="text_input" type="text">
+						<input class="text_input" type="text" value="ติว GAT Eng">
 					</li>
 					<li>
 						<h2>CATEGORY</h2>
@@ -41,14 +41,14 @@
 							<option value="chem">เคมี</option>
 							<option value="biology">ชีววิทยา</option>
 							<option value="math">คณิตศาสตร์</option>
-							<option value="english">ภาษาอังกฤษ</option>
+							<option value="english" selected>ภาษาอังกฤษ</option>
 							<option value="thai">ภาษาไทย</option>
 							<option value="social">สังคมศึกษา</option>
 						</select>
 					</li>
 					<li>
 						<h2>DESCRIPTION</h2>
-						<textarea class="text_area" ></textarea>
+						<textarea class="text_area" >ติว blahติว blahติว blah</textarea>
 					</li>
 					<li>
 						<div class="button_file">

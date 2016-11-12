@@ -16,11 +16,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/category/{catId?}', function ($catId='') {
-    return view('category');
-});
+Route::get('/category/{catId}', [
+    'uses' => 'ContentController@viewByCategory'
+]);
 
-Route::get('/content/{action?}/{contentId?}', function ($action = 'view', $contentId = '') {
+Route::get('/content/{action}/{contentId}', function ($action = 'view', $contentId = '') {
 
     if ($action == 'view')
     	return view('content');
@@ -28,8 +28,7 @@ Route::get('/content/{action?}/{contentId?}', function ($action = 'view', $conte
     	return view('edit-content');
     else if ($action == 'new')
     	return view('new-content');
-    else
-    	return url('/');
+    return redirect('/');
 });
 
 Route::get('/profile/{action?}/{profileId?}', function ($action = 'view', $profileId = '') {
@@ -37,8 +36,7 @@ Route::get('/profile/{action?}/{profileId?}', function ($action = 'view', $profi
 		return view('profile');
 	else if ($action == 'edit')
 		return view('edit-profile');
-	else
-    	return url('/');
+    return redirect('/');
 });
 
 Route::get('/feed', function () {

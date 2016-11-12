@@ -30,7 +30,7 @@
 			<li>
 				<div class="aboutme">
 					<div class="avatar">
-						<img src="images/unknown-avatar.png" alt="">
+						<img src="{{ asset('images/unknown-avatar.png') }}" alt="">
 					</div>
 					<div class="user_email">
 						<h1>javascript5</h1>
@@ -71,7 +71,7 @@
 				
 			</div>
 			<div class="thumbnail">
-				<img src="images/content/2.jpg" alt="">
+				<img src="{{ asset('images/content/2.jpg') }}" alt="">
 			</div>
 		</div>
 		

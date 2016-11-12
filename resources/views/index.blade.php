@@ -311,7 +311,7 @@
 
 
 		<div class="readmore_pop">
-			<a href="#">READ MORE</a>
+			<a href="{{ url('/feed') }}">READ MORE</a>
 		</div>
 		</div>
 </section>

@@ -31,7 +31,7 @@
 			<div class="register_inlog">
 				<h1>REGISTER</h1>
 				<p>
-					<a href="#">SIGN UP</a>
+					<a href="{{ url('/register') }}">SIGN UP</a>
 				</p>
 			</div>
 		</div>
@@ -53,7 +53,7 @@
 			</li>
 			<li>
 				<input type="checkbox">
-				<span>REMEMBER</span>
+				<span>REMEMBER ME</span>
 			</li>
 			<li class="signin_login">
 				<a href="#">SIGN IN</a>
