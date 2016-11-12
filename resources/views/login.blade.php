@@ -36,8 +36,12 @@
 			</div>
 		</div>
 	
-
+		{{ Form::open(array('url' => 'login', 'id' => 'form-login')) }}
 		<div class="login_right">
+		@if (@$message)
+				<span style="color: red;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp; {{ @$message }} </span>
+				<div style="height: 30px;"></div>
+		@endif
 		<ul>
 			<li>
 				<h1>Login !</h1>
@@ -45,18 +49,18 @@
 
 			<li>
 				<h2>USERNAME OR EMAIL</h2>
-				<input class="text_input" type="text">
+				{{ Form::text('username_mail', null, ['class' => 'text_input', 'required' => 'required']) }}
 			</li>
 			<li>
 				<h2>PASSWORD</h2>
-				<input class="text_input" type="password">
+				{{ Form::password('password', ['class' => 'text_input', 'required' => 'required']) }}
 			</li>
 			<li>
 				<input type="checkbox">
 				<span>REMEMBER ME</span>
 			</li>
 			<li class="signin_login">
-				<a href="#">SIGN IN</a>
+				<a href="#" onclick='document.getElementById("form-login").submit();'>SIGN IN</a>
 			</li>
 
 			<li class="forget_login">
@@ -65,7 +69,7 @@
 		</ul>	
 	</div>
 	</div>
-	
+	{{ Form::close() }}
 </div>
 </div>
 

@@ -26,7 +26,7 @@
                     <i class="fa fa-bars" aria-hidden="true"></i>
                     </h1>
                     <ul>
-                        @if (Route::has('login'))
+                        @if (Session::has('userId'))
                             <li><a href="{{ url('/feed') }}">FEED</a></li>
                             <li><a href="{{ url('/category') }}">CATEGORY</a></li>
                             <li><a href="{{ url('/trending') }}">TRENDING</a></li>
@@ -43,7 +43,7 @@
             <!-- End Responsive -->
             <!-- Main Menu -->
             <!-- Menu Left -->
-            @if (Route::has('login'))
+            @if (Session::has('userId'))
             <div id="menu">
                 <ul>
                     <li><a href="{{ url('/feed') }}">FEED</a></li>
@@ -56,25 +56,25 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="{{ url('/category/1') }}">ฟิสิกส์</a>
+                                <a href="{{ url('/category/1') }}">Physics</a>
                             </li>
                             <li>
-                                <a href="{{ url('/category/1') }}">เคมี</a>
+                                <a href="{{ url('/category/2') }}">Chemistry</a>
                             </li>
                             <li>
-                                <a href="{{ url('/category/1') }}">ชีววิทยา</a>
+                                <a href="{{ url('/category/3') }}">Biology</a>
                             </li>
                             <li>
-                                <a href="{{ url('/category/1') }}">คณิตศาสตร์</a>
+                                <a href="{{ url('/category/4') }}">Mathematics</a>
                             </li>
                             <li>
-                                <a href="{{ url('/category/1') }}">ภาษาอังกฤษ</a>
+                                <a href="{{ url('/category/5') }}">English</a>
                             </li>
                             <li>
-                                <a href="{{ url('/category/1') }}">ภาษาไทย</a>
+                                <a href="{{ url('/category/6') }}">Thai</a>
                             </li>
                             <li>
-                                <a href="{{ url('/category/1') }}">สังคมศึกษา</a>
+                                <a href="{{ url('/category/7') }}">Social studies</a>
                             </li>
                         </ul>
                     </li>
@@ -84,12 +84,12 @@
             @endif
             <!-- Menu Right -->
             <div class="menu_right">
-            @if (Route::has('login'))
+            @if (Session::has('userId'))
                 <ul>
                     <li class="profile_menu">
                         <span>Hello</span>
-                        <a href="">
-                            JAVASCRIPT5
+                        <a href="{{ url('/profile') }}">
+                            {{ Session::get('username') }}
                         </a>
                         <button type="button" href="" aria-expanded="true">
                             <i class="fa fa-cog" aria-hidden="true"></i>

@@ -47,17 +47,24 @@ Route::get('/trending', function () {
     return view('trending');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', [
+    'uses' => 'UserLogin@getLogin'
+]);
+Route::post('/login', [
+    'uses' => 'UserLogin@postLogin'
+]);
 
-Route::get('/register',function(){
-   return view('register');
-});
+Route::get('/register', [
+    'uses' => 'UserRegistration@getRegister'
+]);
+Route::post('/register', [
+    'uses' => 'UserRegistration@postRegister'
+]);
 
-Route::get('/logout',function(){
-   // return view('register');
-});
+
+Route::get('/logout',[
+    'uses' => 'UserLogout@logout'
+]);
 
 Route::resource('my', 'MyController');
 Route::get('test','ImplicitController@getIndex');

@@ -24,40 +24,46 @@
 	</h1>
 </div>
 	<div class="bgregister">
-	
 
+		{{ Form::open(array('url' => 'register', 'id' => 'register')) }}
 		<div class="register animated bounceInUp">
+		@foreach ($errors->all() as $error) 
+			<span style="color: red;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp; {{ $error }} </span><br>
+			@if ($loop->last)
+				<div style="height: 50px;"></div>
+			@endif
+		@endforeach
 		<ul>
 			<li>
 				<h1>Sign Up!</h1>
 			</li>
-
 			<li>
 				<div class="namel_regis">
-					<h2>NAME</h2>
-					<input type="text">
+					<h2>FIRSTNAME</h2>
+					{{ Form::text('firstname', null, ['required' => 'required']) }}
 				</div>
 
 				<div class="namel_regis">
-					<h2>LAST NAME</h2>
-					<input type="text">
+					<h2>LASTNAME</h2>
+					{{ Form::text('lastname', null, ['required' => 'required']) }}
 				</div>
 			</li>
 			<li>
 				<h2>E-MAIL</h2>
-				<input class="text_input" type="text">
+				{{ Form::email('mail', null, ['class' => 'text_input', 'required' => 'required']) }}
 			</li>
 			<li>
 				<h2>USERNAME</h2>
-				<input class="text_input" type="text">
+				{{ Form::text('username', null, ['class' => 'text_input', 'required' => 'required']) }}
 			</li>
 			<li>
 				<h2>PASSWORD</h2>
-				<input class="text_input" type="password">
+				{{ Form::password('password', ['class' => 'text_input', 'required' => 'required']) }}
+
 			</li>
 			<li>
 				<h2>REPEAT PASSWORD</h2>
-				<input class="text_input" type="password">
+				{{ Form::password('password_confirmation', ['class' => 'text_input', 'required' => 'required']) }}
 			</li>
 
 			<li>
@@ -69,13 +75,13 @@
 				</div>
 			</li>
 
-			<li>
-				<a href="#" class="signup_login">SIGN UP</a>
+			<li >
+				<p class="signup_login" onclick='document.getElementById("register").submit();'>SIGN UP</p>
 			</li>
 		</ul>	
 	</div>
 	</div>
-	
+	{{ Form::close() }}
 </div>
 </div>
 
