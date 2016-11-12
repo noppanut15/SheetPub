@@ -1,0 +1,285 @@
+
+body{
+	background-color: #ffc90c;
+	   background-repeat: repeat;
+    background-image: url(../images/bg.png);
+}
+
+.wall-item {
+  display: block;
+  margin: 0 0 30px 0;
+  padding: 12px;
+  /* background: white; */
+  /* border-radius: 3px; */
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  transition: all 220ms;
+}
+
+.wall-item:hover {
+
+
+}
+
+.wall-item > img {
+  display: block;
+  width: 100%;
+  margin: 0 0 24px 0;
+}
+
+.wall-item h2 {
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+}
+
+.wall {
+  display: block;
+  position: relative;
+}
+
+.wall-column {
+  display: block;
+  position: relative;
+  width: 33.333333%;
+  float: left;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+@media (max-width: 640px) {
+
+.wall-column { width: 50%; }
+}
+@media (max-width: 480px) {
+
+.wall-column {
+  width: auto;
+  float: none;
+}
+}
+
+.content {
+	/* width: 25%; */
+	/* float: left; */
+	position: relative;
+	overflow: hidden;
+	background-color: #fff;
+	box-shadow: 0px 0px 21px -7px #000;
+}
+
+.link-topost {
+	position: absolute;
+	top: 42%;	/* left: 50%; */
+	right: 0;
+	width: 100%;
+	z-index: 10;
+	text-align: center;
+	opacity: 0;
+	transition: all 0.7s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.link-topost i {
+	padding: 2%;
+	color: #fff;
+	border: 5px solid #fff;
+	font-size: 50px;
+}
+
+.thumbnail-post {
+	position: relative;
+	overflow: hidden;
+}
+
+.content:hover .thumbnail-post img {
+	filter: grayscale(0%);
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.thumbnail-post img {
+	width: 100%;
+	transition: all 1s ease;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+}
+
+.description-post {
+	content: '';
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.9);
+	z-index: 5;
+	bottom: 0;
+	left: 0%;
+	padding-bottom: 20px;
+	text-align: center;
+	transition: all .4s ease;
+}
+
+.content:hover .description-post {
+}
+
+.description-post h1 {
+	font-family: 'RSU';
+	padding: 3%;
+	color: #222;
+	font-size: 27px;
+	margin-top: 15px;
+	padding-bottom: 3px;
+}
+
+.description-post a {
+	text-decoration: none;
+}
+
+.description-post p {
+	font-weight: bold;
+	font-family: 'Supermarket';
+	padding: 2%;
+	color: #222;
+	font-size: 1.1vw;
+	padding-top: 0;
+}
+
+.cate-post {
+	width: 100%;
+	text-align: center;
+	transition: all 0.5s ease;
+	z-index: 6;
+	border-top: 3px solid #ffc80a;
+}
+
+.cate-post h1 {
+	color: #fff;
+	padding: 1% 0% 1% 0%;
+	width: 30%;
+	font-size: 16px;
+	font-family: Arial, Helvetica, Sans-serif, Geneva, Tahoma;
+	background-color: #ffc80a;
+	margin: 0 auto;
+}
+
+.rate_con {
+	margin-bottom: 5%;
+}
+
+.readmore_pop {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	float: left;
+	margin-top: 70px;
+}
+
+.readmore_pop a {
+	color: #ffc80a;
+	padding: 20px;
+	font-family: 'Monster';
+	font-size: 30px;
+	overflow: hidden;
+	position: relative;
+	border: 3px solid #ffc80a;
+	transition: all .5s ease;
+}
+
+.readmore_pop a:hover {
+	color: #fff;
+	background-color: #ffc80a;
+}
+
+/* - - - - - RATINGS */
+#like span {
+	font-family: 'Monster';
+	font-size: 14px;
+	color: #222;
+	float: left;
+	width: auto;
+	display: block;
+	line-height: 33px;
+}
+
+.date_time {
+	margin-top: 20px;
+	position: absolute;
+	background-color: #ffc80a;
+	z-index: 10;
+	right: 0;
+	margin-right: 20px;
+	padding: 15px;
+	border-radius: 360px;
+	text-align: center;
+}
+
+.date_time p {
+	color: #fff;
+	font-size: 15px;
+	font-family: 'Monster';
+}
+
+.content:hover .star_vote{
+	left: 0;
+}
+.star_vote {
+	float: none !important;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: -300px;
+    background-color: #ffc80a;
+    padding: 10px;
+    width: auto !important;
+    transition: all .4s ease;
+ }
+
+ .star_vote ul{
+
+ }
+
+ .star_vote ul li{
+ 	float: left;
+ 	list-style: none;
+ 	color: #fff;
+ 	margin-right: 10px;
+	font-size: 20px;
+ }
+
+.post-title{
+	width: 80%;
+	margin:0 auto;
+}
+
+.post-title h2{
+	text-align: left;
+	color: #a0a0a0;
+	font-size: 14px;
+	font-family: Arial, Helvetica, Sans-serif, Geneva, Tahoma;
+}
+
+.logo {
+	width: 100%;
+	text-align: center;
+	font-family: 'Monster';
+	margin-bottom: 30px;
+	word-wrap: break-word;
+}
+
+.logo h1 {
+	font-size: 7.5vw;
+	color: #fff;
+}
+
+
+.logo h2 {
+	font-size: 70px;
+	color: #222;
+	position: relative;
+	font-family: 'RSU';
+}
+
+
+
+.content_header{
+	width: 70%;
+	margin:0 auto;
+}

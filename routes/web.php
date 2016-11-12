@@ -11,14 +11,58 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Route::get('/category/{catId?}', function ($catId='') {
+    return view('category');
+});
+
+Route::get('/content/{action?}/{contentId?}', function ($action = 'view', $contentId = '') {
+
+    if ($action == 'view')
+    	return view('content');
+    else if ($action == 'edit')
+    	return view('edit-content');
+    else if ($action == 'new')
+    	return view('new-content');
+    else
+    	return url('/');
+});
+
+Route::get('/profile/{action?}/{profileId?}', function ($action = 'view', $profileId = '') {
+	if ($action == 'view')
+		return view('profile');
+	else if ($action == 'edit')
+		return view('edit-profile');
+	else
+    	return url('/');
+});
+
+Route::get('/feed', function () {
+    return view('feed');
+});
+
+Route::get('/trending', function () {
+    return view('trending');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/register',function(){
+   return view('register');
+});
+
+Route::get('/logout',function(){
+   // return view('register');
 });
 
 Route::resource('my', 'MyController');
 Route::get('test','ImplicitController@getIndex');
 
-Route::get('/register',function(){
-   return view('register');
-});
+
 Route::post('/user/register',array('uses'=>'UserRegistration@postRegister'));
