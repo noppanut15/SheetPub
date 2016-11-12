@@ -19,9 +19,15 @@ class UserRegistration extends Controller
             'mail' => 'required|email|max:100|unique:USER,email',
             'username' => 'required|max:32|unique:USER,userName',
             'password' => 'required|min:6|max:100|confirmed',
-            'password_confirmation' => 'required'
+            'password_confirmation' => 'required',
+            'avatar' => 'image'
         ]);
 
+        $image = $request->avatar;
+        $destinationPath = 'images/avatar'; // upload path
+        $extension = $image->getClientOriginalExtension(); // getting image extension
+        $fileName = $request->username.'.'.$extension; // renameing image
+        $image->move($destinationPath, $fileName);
 
         DB::table('USER')->insert([
             'firstName' => $request->firstname,
@@ -29,6 +35,7 @@ class UserRegistration extends Controller
             'userName' => $request->username,
             'password' => $request->password,
             'email' => $request->mail,
+            'profilePic' => $fileName
 
         ]);
 

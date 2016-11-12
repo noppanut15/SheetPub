@@ -221,6 +221,7 @@ body{
 	width: 100%;
 	text-align: center;
 	transition: all .1s ease;
+	cursor: pointer;
 }
 
 .signup_login:active{
@@ -351,6 +352,10 @@ body{
 	background-color: #ffc90c;
 	border:none;
 	font-family: 'Monster';
+}
+
+.button_uploadavatar input {
+	display: none;
 }
 
 .typed-cursor {

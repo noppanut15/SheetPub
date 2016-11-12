@@ -17,20 +17,28 @@ Route::get('/', function () {
 });
 
 Route::get('/category/{catId}', [
-    'middleware' => 'RedirectIfNotAuthenticated',
     'uses' => 'ContentController@viewByCategory'
 ]);
 
-Route::get('/content/{action}/{contentId?}', function ($action = 'view', $contentId = '') {
+Route::get('/content/view/{contentId}', [
+    'uses' => 'ContentController@view'
+]);
 
-    if ($action == 'view')
-    	return view('content');
-    else if ($action == 'edit')
-    	return view('edit-content');
-    else if ($action == 'new')
-    	return view('new-content');
-    return redirect('/');
-});
+Route::get('/content/edit/{contentId}', [
+    'uses' => 'ContentController@getEdit'
+]);
+
+Route::post('/content/edit', [
+    'uses' => 'ContentController@postEdit'
+]);
+
+Route::get('/content/new', [
+    'uses' => 'ContentController@getNew'
+]);
+
+Route::post('/content/new', [
+    'uses' => 'ContentController@postNew'
+]);
 
 Route::get('/profile/{action?}/{profileId?}', function ($action = 'view', $profileId = '') {
 	if ($action == 'view')

@@ -25,7 +25,7 @@
 </div>
 	<div class="bgregister">
 
-		{{ Form::open(array('url' => 'register', 'id' => 'register')) }}
+		{{ Form::open(array('url' => 'register', 'id' => 'register', 'files'=>true)) }}
 		<div class="register animated bounceInUp">
 		@foreach ($errors->all() as $error) 
 			<span style="color: red;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp; {{ $error }} </span><br>
@@ -36,6 +36,18 @@
 		<ul>
 			<li>
 				<h1>Sign Up!</h1>
+			</li>
+			<li>
+				<div class="img_avatar">
+					<img src="images/avatar.png" id="avatar">
+					<div class="button_uploadavatar">
+				         <button type="button" onclick="chooseFile();">BROWSE</button>
+						
+					</div>
+					<div style="height:0px;overflow:hidden">
+					   <input type="file" id="picUpload" name="avatar" />
+					</div>
+				</div>
 			</li>
 			<li>
 				<div class="namel_regis">
@@ -66,15 +78,11 @@
 				{{ Form::password('password_confirmation', ['class' => 'text_input', 'required' => 'required']) }}
 			</li>
 
-			<li>
-				<div class="img_avatar">
-					<img src="images/avatar.png" alt="">
-					<div class="button_uploadavatar">
-						<button type="button">BROWSE</button>
-					</div>
-				</div>
-			</li>
-
+				<script>
+				   function chooseFile() {
+				      $("#picUpload").click();
+				   }
+				</script>
 			<li >
 				<p class="signup_login" onclick='document.getElementById("register").submit();'>SIGN UP</p>
 			</li>
@@ -84,7 +92,22 @@
 	{{ Form::close() }}
 </div>
 </div>
+<script>
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#avatar').attr('src', e.target.result);
+            }            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
+    $("#picUpload").change(function(){
+        readURL(this);
+    });
+</script>
 <!--
 
 <div class="bg_login_page">
