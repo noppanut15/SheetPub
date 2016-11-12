@@ -17,10 +17,11 @@ Route::get('/', function () {
 });
 
 Route::get('/category/{catId}', [
+    'middleware' => 'RedirectIfNotAuthenticated',
     'uses' => 'ContentController@viewByCategory'
 ]);
 
-Route::get('/content/{action}/{contentId}', function ($action = 'view', $contentId = '') {
+Route::get('/content/{action}/{contentId?}', function ($action = 'view', $contentId = '') {
 
     if ($action == 'view')
     	return view('content');
@@ -48,26 +49,23 @@ Route::get('/trending', function () {
 });
 
 Route::get('/login', [
+    'middleware' => 'RedirectIfAuthenticated',
     'uses' => 'UserLogin@getLogin'
 ]);
 Route::post('/login', [
+    'middleware' => 'RedirectIfAuthenticated',
     'uses' => 'UserLogin@postLogin'
 ]);
 
 Route::get('/register', [
+    'middleware' => 'RedirectIfAuthenticated',
     'uses' => 'UserRegistration@getRegister'
 ]);
 Route::post('/register', [
+    'middleware' => 'RedirectIfAuthenticated',
     'uses' => 'UserRegistration@postRegister'
 ]);
-
 
 Route::get('/logout',[
     'uses' => 'UserLogout@logout'
 ]);
-
-Route::resource('my', 'MyController');
-Route::get('test','ImplicitController@getIndex');
-
-
-Route::post('/user/register',array('uses'=>'UserRegistration@postRegister'));

@@ -4,7 +4,7 @@ namespace sheetpub\Http\Middleware;
 
 use Closure;
 
-class RedirectIfAuthenticated
+class RedirectIfNotAuthenticated
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($request->session()->has('userId')) {
-            return redirect('/feed');
+            return $next($request);
         }
-        return $next($request);
+        return redirect('/login');
     }
 }
