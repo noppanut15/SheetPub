@@ -1,6 +1,6 @@
 <?php
 
-namespace toppyapp\Exceptions;
+namespace sheetpub\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

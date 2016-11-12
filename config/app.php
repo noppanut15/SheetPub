@@ -172,11 +172,11 @@ return [
         /*
          * Application Service Providers...
          */
-        toppyapp\Providers\AppServiceProvider::class,
-        toppyapp\Providers\AuthServiceProvider::class,
-        // toppyapp\Providers\BroadcastServiceProvider::class,
-        toppyapp\Providers\EventServiceProvider::class,
-        toppyapp\Providers\RouteServiceProvider::class,
+        sheetpub\Providers\AppServiceProvider::class,
+        sheetpub\Providers\AuthServiceProvider::class,
+        // sheetpub\Providers\BroadcastServiceProvider::class,
+        sheetpub\Providers\EventServiceProvider::class,
+        sheetpub\Providers\RouteServiceProvider::class,
 
     ],
 

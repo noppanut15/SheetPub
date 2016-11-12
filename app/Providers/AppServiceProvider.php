@@ -1,6 +1,6 @@
 <?php
 
-namespace toppyapp\Providers;
+namespace sheetpub\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

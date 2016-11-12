@@ -1,10 +1,10 @@
 <?php
 
-namespace toppyapp\Http\Controllers\Auth;
+namespace sheetpub\Http\Controllers\Auth;
 
-use toppyapp\User;
+use sheetpub\User;
 use Validator;
-use toppyapp\Http\Controllers\Controller;
+use sheetpub\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller

@@ -1,8 +1,8 @@
 <?php
 
-namespace toppyapp\Http\Controllers\Auth;
+namespace sheetpub\Http\Controllers\Auth;
 
-use toppyapp\Http\Controllers\Controller;
+use sheetpub\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller

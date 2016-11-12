@@ -1,6 +1,6 @@
 <?php
 
-namespace toppyapp\Http\Middleware;
+namespace sheetpub\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

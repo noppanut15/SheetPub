@@ -1,6 +1,6 @@
 <?php
 
-namespace toppyapp\Providers;
+namespace sheetpub\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'toppyapp\Http\Controllers';
+    protected $namespace = 'sheetpub\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

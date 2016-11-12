@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(toppyapp\User::class, function (Faker\Generator $faker) {
+$factory->define(sheetpub\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [

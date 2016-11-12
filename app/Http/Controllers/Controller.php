@@ -1,6 +1,6 @@
 <?php
 
-namespace toppyapp\Http\Controllers;
+namespace sheetpub\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

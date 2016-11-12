@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => toppyapp\User::class,
+        'model' => sheetpub\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

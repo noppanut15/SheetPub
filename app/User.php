@@ -1,6 +1,6 @@
 <?php
 
-namespace toppyapp;
+namespace sheetpub;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
