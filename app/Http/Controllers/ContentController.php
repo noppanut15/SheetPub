@@ -4,6 +4,7 @@ namespace sheetpub\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Session;
 
 class ContentController extends Controller
 {
@@ -16,16 +17,32 @@ class ContentController extends Controller
 		return view('category');
 	}
 
+    public function viewByFeed(){
+        
+        return view('feed');
+    }
+
+    public function viewByTrend(){
+        return view('trending');
+    }
+
 	public function view($contentId) {
 		$content = DB::table('CONTENT')->join('CATEGORY', 'CONTENT.catId', '=', 'CATEGORY.catId')
 					->select('CONTENT.*', 'CATEGORY.catName')
 					->where('contentId', '=', $contentId)->get()->first();
-		if (count($content))
+		if (count($content)){
+            $vote = DB::table('VOTE')->where('userId', '=', Session::get('userId'))
+        ->where('contentId', '=', $contentId)->count();
+            $viewOnly = 'false';
+            if ($vote == 1)
+                $viewOnly = 'true';
 
 			return view('content', [
 				'content' => $content, 
-				'time' => date('d F Y', strtotime(str_replace('-','/', $content->timestamp).' +0000'))
+				'time' => date('d F Y', strtotime(str_replace('-','/', $content->timestamp).' +0000')),
+                'viewOnly' => $viewOnly
 				]);
+        }
 		else
 			return redirect('/');
 	}
@@ -67,12 +84,12 @@ class ContentController extends Controller
         return redirect('content/view/'.$contentId);
 	}
 
-	// public function getEdit($contentId) {
+	public function getEdit($contentId) {
 
-	// }
+	}
 
-	// public function postEdit(Request $request) {
+	public function postEdit(Request $request) {
 
-	// }
+	}
 
 }

@@ -3,13 +3,13 @@
 
 @section('custom-css')
 	<link rel="stylesheet" type="text/css" href="{{{ asset('css/content.css') }}}">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.css">
+	<link rel="stylesheet" href="{{ asset('css/jquery.rateyo.min.css') }}">
 @endsection
 @section('custom-js')
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "5dd3f8d2-d20c-435b-9525-a0d494570864", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.js"></script>
+<script src="{{ asset('js/jquery.rateyo.min.js') }}"></script>
 @endsection
 @section('content')
 
@@ -123,7 +123,16 @@
 						$(function () { 
 						  $("#rateYo").rateYo({
 						    normalFill: "#A0A0A0",
-						    ratedFill: "#ffcb18"
+						    ratedFill: "#ffcb18",
+						    rating: {{ $content->voteScore/max(1, $content->votePopulation) }},
+						    readOnly: {{ $viewOnly }},
+						    onSet: function (rating, rateYoInstance) {
+ 								  $("#rateYo").rateYo("option", "readOnly", true);
+							      $.get('/vote/{{ $content->contentId }}/'+rating, function(data, status){
+										if (status == 'success')
+											$("#rateYo").rateYo("option", "readOnly", true);
+							      });
+							    }
 						  });
 						 
 						});

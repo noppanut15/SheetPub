@@ -3,8 +3,11 @@
 
 @section('custom-css')
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/feed.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/jquery.rateyo.min.css') }}">
 @endsection
-
+@section('custom-js')
+<script src="{{ asset('js/jquery.rateyo.min.js') }}"></script>
+@endsection
 @section('content')
 
 <div class="content_header" style="margin:50px auto">

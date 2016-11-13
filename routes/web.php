@@ -16,31 +16,36 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/category/{catId}', [
+Route::get('category/{catId}', [
     'uses' => 'ContentController@viewByCategory'
 ]);
 
-Route::get('/content/view/{contentId}', [
+Route::get('content/view/{contentId}', [
     'uses' => 'ContentController@view'
 ]);
 
-Route::get('/content/edit/{contentId}', [
+Route::get('content/edit/{contentId}', [
     'uses' => 'ContentController@getEdit'
 ]);
 
-Route::post('/content/edit', [
+Route::post('content/edit', [
     'uses' => 'ContentController@postEdit'
 ]);
 
-Route::get('/content/new', [
+Route::get('content/new', [
     'uses' => 'ContentController@getNew'
 ]);
 
-Route::post('/content/new', [
+Route::post('content/new', [
     'uses' => 'ContentController@postNew'
 ]);
 
-Route::get('/profile/{action?}/{profileId?}', function ($action = 'view', $profileId = '') {
+Route::get('vote/{contentId}/{score}', [
+    'uses' => 'VoteController@vote'
+]);
+
+
+Route::get('profile/{action?}/{profileId?}', function ($action = 'view', $profileId = '') {
 	if ($action == 'view')
 		return view('profile');
 	else if ($action == 'edit')
@@ -48,32 +53,32 @@ Route::get('/profile/{action?}/{profileId?}', function ($action = 'view', $profi
     return redirect('/');
 });
 
-Route::get('/feed', function () {
-    return view('feed');
-});
+Route::get('feed',  [
+    'uses' => 'ContentController@viewByFeed'
+]);
 
-Route::get('/trending', function () {
-    return view('trending');
-});
+Route::get('trending',  [
+    'uses' => 'ContentController@viewByTrend'
+]);
 
-Route::get('/login', [
+Route::get('login', [
     'middleware' => 'RedirectIfAuthenticated',
     'uses' => 'UserLogin@getLogin'
 ]);
-Route::post('/login', [
+Route::post('login', [
     'middleware' => 'RedirectIfAuthenticated',
     'uses' => 'UserLogin@postLogin'
 ]);
 
-Route::get('/register', [
+Route::get('register', [
     'middleware' => 'RedirectIfAuthenticated',
     'uses' => 'UserRegistration@getRegister'
 ]);
-Route::post('/register', [
+Route::post('register', [
     'middleware' => 'RedirectIfAuthenticated',
     'uses' => 'UserRegistration@postRegister'
 ]);
 
-Route::get('/logout',[
+Route::get('logout',[
     'uses' => 'UserLogout@logout'
 ]);
