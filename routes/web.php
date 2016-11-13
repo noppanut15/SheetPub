@@ -11,10 +11,9 @@
 |
 */
 
-
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [
+    'uses' => 'IndexController@index'
+]);
 
 Route::get('category/{catId}', [
     'uses' => 'ContentController@viewByCategory'
