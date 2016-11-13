@@ -123,7 +123,7 @@ function thai_date($time){
 					
 					<p>{{ thai_date(date('U', strtotime(str_replace('-','/', $post->timestamp).' +0000'))) }}, วิชา{{ $post->catNameThai }}</p>
 						</div>
-						@if (Session::get('userId') != $record->userId)
+						@if (Session::get('userId') == $record->userId)
 						<div class="post_right">
 						
 							<a href="#">
