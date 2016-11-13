@@ -22,7 +22,7 @@ body {
 }
 
 .thumbnail{
-	width: 100%;
+	width: 90%;
 	float: left;
 }
 
@@ -187,7 +187,7 @@ body {
 
 
 .social-share{
-	    margin-top: 27px;
+	margin-top: 27px;
     margin-right: 30px;
 }
 

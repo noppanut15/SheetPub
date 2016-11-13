@@ -9,10 +9,11 @@
         <link rel="stylesheet" href="{{{ asset('css/animate.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/menu.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/font-awesome.min.css') }}}">
+        @yield('custom-js')
         <script src ="{{{ asset('js/jquery-3.1.1.min.js') }}}" type="text/javascript"></script>
         <script src="{{{ asset('js/script.js') }}}" ></script>
         <script src="{{{ asset('js/config.js') }}}" ></script>
-        @yield('custom-js')
+        
     </head>
     <body>
     @yield('header-custom')

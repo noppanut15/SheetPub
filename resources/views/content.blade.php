@@ -3,14 +3,20 @@
 
 @section('custom-css')
 	<link rel="stylesheet" type="text/css" href="{{{ asset('css/content.css') }}}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.css">
 @endsection
-
+@section('custom-js')
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "5dd3f8d2-d20c-435b-9525-a0d494570864", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.js"></script>
+@endsection
 @section('content')
 
 <div class="content">
 	<div class="logo ">
 		<h1>
-		<script src="js/typed.js"></script>
+		<script src="{{{ asset('js/typed.js') }}}"></script>
 		<script>
 		$(function(){
 		$(".element").typed({
@@ -30,18 +36,18 @@
 			<li>
 				<div class="aboutme">
 					<div class="avatar">
-						<img src="{{ asset('images/unknown-avatar.png') }}" alt="">
+						<img src="{{ asset('images/avatars') }}/{{ Session::get('profilePic') }}" alt="">
 					</div>
 					<div class="user_email">
-						<h1>javascript5</h1>
-						<h2>Pongpanot Na Ubon</h2>
-						<p>yiwman-gm@hotmail.com</p>
+						<h1>{{ Session::get('username') }}</h1>
+						<h2>{{ Session::get('firstname') }} {{ Session::get('lastname') }}</h2>
+						<p>{{ Session::get('mail') }}</p>
 					</div>
 				</div>
 			</li>
 			<li>
 				<div class="social-share">
-					<div class="facebook">
+					<!-- <div class="facebook">
 						<a href="">
 							<i class="fa fa-facebook" aria-hidden="true"></i>
 						</a>
@@ -55,7 +61,13 @@
 						<a href="">
 							<i class="fa fa-google-plus" aria-hidden="true"></i>
 						</a>
-					</div>
+					</div> -->
+					<br>
+					<div>
+					<span class='st_facebook_hcount' displayText='Facebook'></span>
+					</div><div>
+					<span class='st_twitter_hcount' displayText='Tweet'></span></div>
+					<div><span class='st_googleplus_hcount' displayText='Google +'></span></div>
 				</div>
 			</li>
 		</ul>
@@ -65,13 +77,13 @@
 			<div class="title">
 				<a href="#">
 					<h1>
-					การเคลื่อนที่ของปลาวาฬบนดาวนาเม็กที่ 170 M อิอิอิ มั่วๆนิ่มๆ
+					{{ $content->topic }}
 					</h1>
 				</a>
 				
 			</div>
 			<div class="thumbnail">
-				<img src="{{ asset('images/content/2.jpg') }}" alt="">
+				<img src="{{ asset('uploads/thumbnails') }}/{{ $content->thumbnail }}" alt="">
 			</div>
 		</div>
 		
@@ -79,10 +91,10 @@
 			<ul>
 				<li style="border-bottom: 1px dashed #ccc; padding-bottom: 15px;">
 					<p>
-						DESSCRIPTION
+						DESCRIPTION
 					</p>
 					<span>
-						คําคมความรักเงินเหมือนความรัก. เงินก็เหมือนความรัก มันค่อยๆ ฆ่า ผู้ที่ยึดมั่น ไว้อย่างช้าๆ และเจ็บปวด และจะคืนชีวิตให้กับ ผู้ที่ส่งมอบมันต่อไป ...
+						{{ $content->description }}
 					</span>
 				</li>
 				<li style="border-bottom: 1px dashed #ccc; padding-bottom: 15px;">
@@ -90,7 +102,7 @@
 						POST DATE
 					</p>
 					<span>
-						1 ธันวาคม 2559
+						{{ $time }}
 					</span>
 				</li>
 				<li style="border-bottom: 1px dashed #ccc; padding-bottom: 15px;">
@@ -98,33 +110,27 @@
 						CATEGORY
 					</p>
 					<span>
-						ชีวะวิทยา
+						{{ $content->catName }}
 					</span>
 				</li>
 				<li>
 					<p>
 						VOTE
 					</p>
-					<div class="star_vote">
-						<div>
-							<i class="fa fa-star" aria-hidden="true"></i>
-						</div>
-						<div>
-							<i class="fa fa-star" aria-hidden="true"></i>
-						</div>
-						<div>
-							<i class="fa fa-star" aria-hidden="true"></i>
-						</div>
-						<div>
-							<i class="fa fa-star" aria-hidden="true"></i>
-						</div>
-						<div>
-							<i class="fa fa-star" aria-hidden="true"></i>
-						</div>
-					</div>
+					<div id="rateYo"></div>
+
+					<script>
+						$(function () { 
+						  $("#rateYo").rateYo({
+						    normalFill: "#A0A0A0",
+						    ratedFill: "#ffcb18"
+						  });
+						 
+						});
+					</script>
 				</li>
 				<li>
-					<a href="" style="float: left;width: 100%;">
+					<a href="{{ asset('uploads/files') }}/{{ $content->file }}" style="float: left;width: 100%;">
 						<h1 style="text-align: center;background-color: #ffcb18;border-bottom: 5px solid #efbb09; font-family: 'Monster';">Download</h1>
 					</a>
 				</li>

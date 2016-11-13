@@ -51,7 +51,7 @@ header {
 	background-color: #ffc80a;
 	background-repeat: repeat;
 	overflow: hidden;
-	background-image: url(images/bg.png);
+	background-image: url(../images/bg.png);
 }
 
 .slogan {
