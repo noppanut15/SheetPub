@@ -60,7 +60,7 @@
 				<span>REMEMBER ME</span>
 			</li>
 			<li class="signin_login">
-				<a href="#" onclick='document.getElementById("form-login").submit();'>SIGN IN</a>
+				<a href="javascript:void(0)" onclick='document.getElementById("form-login").submit();'>SIGN IN</a>
 			</li>
 
 			<li class="forget_login">

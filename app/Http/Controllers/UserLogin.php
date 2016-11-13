@@ -26,7 +26,7 @@ class UserLogin extends Controller
 			$request->session()->put('username', $find->first()->userName);
 			$request->session()->put('mail', $find->first()->email);
 			$request->session()->put('profilePic', $find->first()->profilePic);
-			return view('feed');
+			return redirect('feed');
 		}
 		else {
 			return view('login', ['message' => 'Your username or password is incorrect.']);

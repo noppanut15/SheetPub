@@ -24,7 +24,7 @@ class UserRegistration extends Controller
         ]);
 
         $image = $request->avatar;
-        $destinationPath = 'images/avatar'; // upload path
+        $destinationPath = 'images/avatars'; // upload path
         $extension = $image->getClientOriginalExtension(); // getting image extension
         $fileName = $request->username.'.'.$extension; // renameing image
         $image->move($destinationPath, $fileName);

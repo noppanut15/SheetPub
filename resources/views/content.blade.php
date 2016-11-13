@@ -36,12 +36,12 @@
 			<li>
 				<div class="aboutme">
 					<div class="avatar">
-						<img src="{{ asset('images/avatars') }}/{{ Session::get('profilePic') }}" alt="">
+						<a href="{{ url('/profile') }}/{{ $content->userId }}"><img src="{{ asset('images/avatars') }}/{{ $content->profilePic }}" alt="{{ $content->firstName }} {{ $content->lastName }}"></a>
 					</div>
 					<div class="user_email">
-						<h1>{{ Session::get('username') }}</h1>
-						<h2>{{ Session::get('firstname') }} {{ Session::get('lastname') }}</h2>
-						<p>{{ Session::get('mail') }}</p>
+						<a href="{{ url('/profile') }}/{{ $content->userId }}"><h1>{{ $content->userName }}</h1></a>
+						<h2>{{ $content->firstName }} {{ $content->lastName }}</h2>
+						<p>{{ $content->email }}</p>
 					</div>
 				</div>
 			</li>

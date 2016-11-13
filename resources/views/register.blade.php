@@ -84,7 +84,7 @@
 				   }
 				</script>
 			<li >
-				<p class="signup_login" onclick='document.getElementById("register").submit();'>SIGN UP</p>
+				<a href="javascript:void(0)" class="signup_login" onclick='document.getElementById("register").submit();'>SIGN UP</a>
 			</li>
 		</ul>	
 	</div>

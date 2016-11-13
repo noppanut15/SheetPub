@@ -45,8 +45,8 @@ class ContentController extends Controller
     }
 
 	public function view($contentId) {
-		$content = DB::table('CONTENT')->join('CATEGORY', 'CONTENT.catId', '=', 'CATEGORY.catId')
-					->select('CONTENT.*', 'CATEGORY.catName')
+		$content = DB::table('CONTENT')->join('CATEGORY', 'CONTENT.catId', '=', 'CATEGORY.catId')       ->join('USER', 'CONTENT.userId', '=', 'USER.userId')
+					->select('CONTENT.*', 'CATEGORY.catName', 'USER.*')
 					->where('contentId', '=', $contentId)->get()->first();
 		if (count($content)){
             $vote = DB::table('VOTE')->where('userId', '=', Session::get('userId'))
@@ -103,7 +103,7 @@ class ContentController extends Controller
 	}
 
 	public function getEdit($contentId) {
-        
+
 	}
 
 	public function postEdit(Request $request) {

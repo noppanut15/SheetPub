@@ -45,13 +45,13 @@ Route::get('vote/{contentId}/{score}', [
 ]);
 
 
-Route::get('profile/{action?}/{profileId?}', function ($action = 'view', $profileId = '') {
-	if ($action == 'view')
-		return view('profile');
-	else if ($action == 'edit')
-		return view('edit-profile');
-    return redirect('/');
-});
+Route::get('profile/{profileId?}', [
+    'uses' => 'UserProfile@view'
+]);
+
+Route::get('profile/edit', [
+    'uses' => 'UserProfile@edit'
+]);
 
 Route::get('feed',  [
     'uses' => 'ContentController@viewByFeed'
