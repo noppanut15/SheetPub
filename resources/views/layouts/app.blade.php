@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{{{ asset('css/font-awesome.min.css') }}}">
         @yield('custom-css')
         <script src ="{{{ asset('js/jquery-3.1.1.min.js') }}}" type="text/javascript"></script>
+        <script src="{{{ asset('js/script.js') }}}" ></script>
         @yield('custom-js')
     </head>
     <body>

@@ -5,9 +5,6 @@
 	<link rel="stylesheet" href="{{{ asset('css/style.css') }}}">
 
 @endsection
-@section('custom-js')
-	<script src="{{{ asset('js/script.js') }}}" ></script>
-@endsection
 
 @section('header-custom')
 <!-- HEAD -->
