@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'มีชีตมากกว่า 1000+ ชีต ที่คุณจะได้ร่วมแบ่งปัน')
+@section('title', 'Edit Sheet')
 
 @section('custom-css')
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/new-content.css') }}">

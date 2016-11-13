@@ -4,6 +4,7 @@ namespace sheetpub\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Hash;
 
 class UserRegistration extends Controller
 {
@@ -33,7 +34,7 @@ class UserRegistration extends Controller
             'firstName' => $request->firstname,
             'lastName' => $request->lastname,
             'userName' => $request->username,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'email' => $request->mail,
             'profilePic' => $fileName
 

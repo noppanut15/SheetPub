@@ -5,6 +5,7 @@ namespace sheetpub\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use DB;
+use Hash;
 
 class UserProfile extends Controller
 {
@@ -68,7 +69,7 @@ class UserProfile extends Controller
         DB::table('USER')->where('userId', '=', Session::get('userId'))->update([
             'firstName' => $request->firstname,
             'lastName' => $request->lastname,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'email' => $request->mail,
             'profilePic' => $fileName
         ]);

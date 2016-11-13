@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'มีชีตมากกว่า 1000+ ชีต ที่คุณจะได้ร่วมแบ่งปัน')
+@section('title', $record->firstName.' '.$record->lastName)
 
 @section('custom-css')
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
@@ -142,10 +142,12 @@ function thai_date($time){
 
 			</ul>
 		</div>
-							
-				<div style="height: 600px; width: 100%; text-align: center;"><img style="margin-top: 60px;" src="{{ asset('images/no-data.png') }}">
-				@if (Session::get('userId') == $record->userId)
-					<p>ว๊า! ยังไม่มีชีทเป็นของตัวเองเลย <a style="color:#ffcb18;" href="{{ url('content/new') }}">มาเริ่มแชร์ชีทฉบับแรก</a>กันสิ</p>
+						
+				<div style="height: 600px; width: 100%; text-align: center;">
+				<i style="font-size: 10em; color: #222222; margin: 90px 0 15px 0;" class="fa fa-pencil-square" aria-hidden="true"></i>
+					<h2 style="margin-bottom: 10px;">No Content</h2>
+					@if (Session::get('userId') == $record->userId)	
+					<p>ยังไม่มีเนื้อหาของคุณเลย มา<a style="color:#ffcb18; font-weight: bold;" href="{{ url('content/new') }}">เริ่มแชร์ชีทฉบับแรก</a>ของคุณกันเถอะ</p>
 				@endif
 				</div>
 			@endif

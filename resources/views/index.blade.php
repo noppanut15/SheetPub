@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'มีชีตมากกว่า 1000+ ชีต ที่คุณจะได้ร่วมแบ่งปัน')
+@section('title', 'แหล่งรวมชีทมากกว่า 1000+ ชีท ที่คุณจะได้ร่วมแบ่งปัน')
 
 @section('custom-css')
 	<link rel="stylesheet" href="{{{ asset('css/style.css') }}}">
@@ -30,7 +30,7 @@
 			</script>
 			<span class="element"></span>
 		</h1>
-		<h2 class="animated bounce">มีชีตมากกว่า 1000+ ชีต ที่คุณจะได้ร่วมแบ่งปัน</h2>
+		<h2 class="animated bounce">แหล่งรวมชีทมากกว่า 1000+ ชีท ที่คุณจะได้ร่วมแบ่งปัน</h2>
 		<div class="button_border">
 			<a id="friststep" href="#step_1">GET STARTED</a>	
 		</div>
@@ -166,7 +166,7 @@
 						<!-- Title -->
 						<!-- Title -->
 						<div class="post-title">
-							<a href="#">
+							<a href="{{ url('content/view') }}/{{ $content->contentId }}">
 								<h1>{{ $content->topic }}</h1>
 							</a>
 							<h2>{{ $content->description }}</h2>

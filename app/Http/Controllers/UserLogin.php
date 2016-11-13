@@ -4,6 +4,7 @@ namespace sheetpub\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Hash;
 
 class UserLogin extends Controller
 {
@@ -16,16 +17,15 @@ class UserLogin extends Controller
 		->where(function($query) use ($request){
 			$query->where('userName', '=', $request->username_mail)->orWhere('email', '=', $request->username_mail);
 		})
-		->where('password', '=', $request->password)
-		->get();
+		->get()->first();
 
-		if (count($find)){
-			$request->session()->put('userId', $find->first()->userId);
-			$request->session()->put('firstname', $find->first()->firstName);
-			$request->session()->put('lastname', $find->first()->lastName);
-			$request->session()->put('username', $find->first()->userName);
-			$request->session()->put('mail', $find->first()->email);
-			$request->session()->put('profilePic', $find->first()->profilePic);
+		if (count($find) && Hash::check($request->password, $find->password)){
+			$request->session()->put('userId', $find->userId);
+			$request->session()->put('firstname', $find->firstName);
+			$request->session()->put('lastname', $find->lastName);
+			$request->session()->put('username', $find->userName);
+			$request->session()->put('mail', $find->email);
+			$request->session()->put('profilePic', $find->profilePic);
 			return redirect('feed');
 		}
 		else {
