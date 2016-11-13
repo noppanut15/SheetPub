@@ -120,17 +120,18 @@ function thai_date($time){
 							<i style="@if($score>=5) color:#ffcb18 !important; @endif" class="fa fa-star" aria-hidden="true"></i>
 						</div>
 					</div>
-					
-					<p>{{ thai_date(date('U', strtotime(str_replace('-','/', $post->timestamp).' +0000'))) }}, วิชา{{ $post->catNameThai }}</p>
+
+					<p><i style="margin: 10px 10px 0 0;" class="fa fa-calendar" aria-hidden="true"></i>{{ thai_date(date('U', strtotime(str_replace('-','/', $post->timestamp).' +0000'))) }}</p>
+					<p><i style="margin-right: 10px;" class="fa fa-bookmark" aria-hidden="true"></i> วิชา{{ $post->catNameThai }}</p>
 						</div>
 						@if (Session::get('userId') == $record->userId)
 						<div class="post_right">
 						
-							<a href="#">
+							<a href="{{ url('content/edit') }}/{{ $post->contentId }}">
 								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 							</a>
 
-							<a href="#">
+							<a href="{{ url('content/delete') }}/{{ $post->contentId }}" onclick="return confirm('ยืนยันการลบเนื้อหานี้ ?')">
 								<i class="fa fa-trash" aria-hidden="true"></i>
 							</a>
 						</div>

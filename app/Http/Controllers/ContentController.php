@@ -103,11 +103,63 @@ class ContentController extends Controller
 	}
 
 	public function getEdit($contentId) {
-
+        $content = DB::table('CONTENT')->where('contentId', '=', $contentId)->get()->first();
+        return view('edit-content', ['content' => $content]);
 	}
 
-	public function postEdit(Request $request) {
+	public function postEdit(Request $request, $contentId) {
+        $content = DB::table('CONTENT')->where('contentId', '=', $contentId)->get()->first();
+        $this->validate($request, [
+            'title' => 'required|max:100',
+            'category' => 'required|max:10',
+            'description' => 'required',
+            'file' => 'mimetypes:application/pdf',
+            'thumbnail' => 'image',
+        ]);
+        $file = $request->file;
+        $thumbnail = $request->thumbnail;
+        $fileName = $content->file;
+        $thumbnailName = $content->thumbnail;
+        $username = $request->session()->get('username');
 
+        if (!empty($file)){
+            $destinationPath = 'uploads/files'; // upload path
+
+            unlink($destinationPath.'/'.$fileName); // remove old file
+            $extension = $file->getClientOriginalExtension(); // getting image extension
+            $fileName = md5(date('U').$username).'.'.$extension; // renameing image
+            $file->move($destinationPath, $fileName);
+        }
+        if (!empty($thumbnail)){
+            $destinationPath = 'uploads/thumbnails'; // upload path
+
+            unlink($destinationPath.'/'.$thumbnailName); // remove old file
+            $extension = $thumbnail->getClientOriginalExtension(); // getting image extension
+            $thumbnailName = md5(date('U').$username).'.'.$extension; // renameing image
+            $thumbnail->move($destinationPath, $thumbnailName);
+        }
+
+        DB::table('CONTENT')->where('contentId', '=', $contentId)
+                            ->update(['topic' => $request->title, 
+                                    'catId' => $request->category,
+                                    'description' => $request->description,
+                                    'file' => $fileName,
+                                    'thumbnail' => $thumbnailName
+                                    ]);
+        return redirect('content/view/'.$contentId);
 	}
+
+    public function deleteContent($contentId){
+        $content = DB::table('CONTENT')->where('contentId', '=', $contentId)->get()->first();
+        // Check permission
+        if (count($content) && ($content->userId == Session::get('userId'))){
+            DB::table('CONTENT')->where('contentId', '=', $contentId)->delete();
+            DB::table('VOTE')->where('contentId', '=', $contentId)->delete();
+            unlink('uploads/files/'.$content->file);
+            unlink('uploads/thumbnails/'.$content->thumbnail);
+            return redirect('profile');
+        }
+        return 'You not have permission to do that.';
+    }
 
 }

@@ -24,55 +24,79 @@
 			</h1>
 		</div>
 		<div class="bgregister">
-			
+			{{ Form::open(array('url' => 'content/edit/'.$content->contentId, 'id' => 'edit-content', 'files'=>true)) }}
 			<div class="register animated bounceInUp">
+			@foreach ($errors->all() as $error) 
+				<span style="color: red;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp; {{ $error }} </span><br>
+				@if ($loop->last)
+					<div style="height: 50px;"></div>
+				@endif
+			@endforeach
 				<ul>
 					<li>
 						<h1>EDIT SHEET!</h1>
 					</li>
 					<li>
 						<h2>TITLE</h2>
-						<input class="text_input" type="text" value="ติว GAT Eng">
+						{{ Form::text('title', $content->topic, ['class' => 'text_input', 'required' => 'required']) }}
 					</li>
 					<li>
 						<h2>CATEGORY</h2>
-						<select class="category">
-							<option value="physic">ฟิสิกส์</option>
-							<option value="chem">เคมี</option>
-							<option value="biology">ชีววิทยา</option>
-							<option value="math">คณิตศาสตร์</option>
-							<option value="english" selected>ภาษาอังกฤษ</option>
-							<option value="thai">ภาษาไทย</option>
-							<option value="social">สังคมศึกษา</option>
-						</select>
+						{{ Form::select('category', [
+						'1' => 'ฟิสิกส์',
+						'2' => 'เคมี',
+						'3' => 'ชีววิทยา',
+						'4' => 'คณิตศาสตร์',
+						'5' => 'ภาษาอังกฤษ',
+						'6' => 'ภาษาไทย',
+						'7' => 'สังคมศึกษา',
+						], $content->catId, ['class' => 'category']) }}
+
 					</li>
 					<li>
 						<h2>DESCRIPTION</h2>
-						<textarea class="text_area" >ติว blahติว blahติว blah</textarea>
+						{{ Form::textarea('description', $content->description ,['class' => 'text_area']) }}
 					</li>
 					<li>
+						<h2>UPLOAD SHEET</h2>
 						<div class="button_file">
-							<form action="" method="post" enctype="multipart/form-data" name="frmMain" id="frmMain">
-								<input class="filed_file" name="txtFileName" type="text" id="txtFileName" size="50">
-								<br>
-								<span>Upload file (pdf, jpg, png, doc, docx, ppt, pptx, xls, xlsx only!)</span>
-								<input class="button_browse" name="btnBrowse" type="button" id="btnBrowse" value="Browse" onClick="filName.click();">
-								<input type="file" name="filName" STYLE="display:none" onChange="txtFileName.value = this.value;">
-							</form>
+							<p name="txtFileName" id="txtFileName"><a href="{{ asset('uploads/files') }}/{{ $content->file }}" target="_blank">{{ $content->file }}</a></p>
+							<br>
+							<span>PDF file only.</span>
+							<input class="button_browse" name="btnBrowse" type="button" value="CHANGE" onClick="file.click();">
+							<input type="file" name="file" style="display:none" onChange="txtFileName.innerHTML = this.value;">
 						</div>
 					</li>
 					<li>
-						<div class="img_avatar">
-							<img src="{{ asset('images/avatar.png') }}" alt="">
+						<h2>THUMBNAIL</h2>
+							<div class="img_avatar">
+							<input type="file" id="thumbnail" name="thumbnail" style="display:none" onClick='txtFileName.style = 'display: block';">
+							<img src="{{ asset('uploads/thumbnails') }}/{{ $content->thumbnail }}" id="thumbnail_pic" alt="">
 							<div class="button_uploadavatar">
-								<button type="button">UPLOAD IMAGES</button>
+								<button type="button" onClick="thumbnail.click()">CHANGE</button>
 							</div>
 						</div>
 					</li>
-					
+					<script>
+						function readURL(input) {
+					        if (input.files && input.files[0]) {
+					            var reader = new FileReader();
+					            
+					            reader.onload = function (e) {
+					                $('#thumbnail_pic').attr('src', e.target.result);
+					            }            
+					            reader.readAsDataURL(input.files[0]);
+					        }
+					    }
+
+					    $("#thumbnail").change(function(){
+					        readURL(this);
+					    });
+					</script>
 					<li>
-						<a href="#" class="signup_login">POST</a>
+						<p class="signup_login" onclick='document.getElementById("edit-content").submit();''>POST</p>
 					</li>
+					{{ Form::close() }}
 				</ul>
 			</div>
 		</div>

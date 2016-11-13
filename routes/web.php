@@ -28,7 +28,7 @@ Route::get('content/edit/{contentId}', [
     'uses' => 'ContentController@getEdit'
 ]);
 
-Route::post('content/edit', [
+Route::post('content/edit/{contentId}', [
     'uses' => 'ContentController@postEdit'
 ]);
 
@@ -40,17 +40,24 @@ Route::post('content/new', [
     'uses' => 'ContentController@postNew'
 ]);
 
+Route::get('content/delete/{contentId}', [
+    'uses' => 'ContentController@deleteContent'
+]);
+
 Route::get('vote/{contentId}/{score}', [
     'uses' => 'VoteController@vote'
 ]);
 
+Route::get('profile/edit', [
+    'uses' => 'UserProfile@showProfileEdit'
+]);
+
+Route::post('profile/edit', [
+    'uses' => 'UserProfile@postProfileEdit'
+]);
 
 Route::get('profile/{profileId?}', [
     'uses' => 'UserProfile@view'
-]);
-
-Route::get('profile/edit', [
-    'uses' => 'UserProfile@edit'
 ]);
 
 Route::get('feed',  [
