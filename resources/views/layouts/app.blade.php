@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SheetPub - @yield('title')</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SheetPub - @yield('title')</title>
+        @yield('custom-css')
         <link rel="stylesheet" href="{{{ asset('css/fonts.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/animate.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/menu.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/font-awesome.min.css') }}}">
-        @yield('custom-css')
+
         <script src ="{{{ asset('js/jquery-3.1.1.min.js') }}}" type="text/javascript"></script>
         <script src="{{{ asset('js/script.js') }}}" ></script>
         <script src="{{{ asset('js/config.js') }}}" ></script>

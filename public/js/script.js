@@ -55,9 +55,9 @@ function parallaxScroll(){
 	var scrolled = $(window).scrollTop();
 		
 		//*-- STEP ONE --*//
-		var sec1 = $("#step_1").offset().top();
-		var sec2 = $("#step_2").offset().top();
-		var sec3 = $("#step_3").offset().top();
+		var sec1 = $("#step_1").offset().top;
+		var sec2 = $("#step_2").offset().top;
+		var sec3 = $("#step_3").offset().top;
     	if (scrolled >= sec1-50) {
     		$('.instepONE').css({ opacity: 1 });
     		$('.number_step1').addClass('animated bounceInUp');

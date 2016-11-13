@@ -14,7 +14,7 @@
 	<div class="slogan">
 		<h1 class="">
 
-			<script src="js/typed.js"></script>
+			<script src="{{{ asset('js/typed.js') }}}"></script>
 					<script>
 				    $(function(){
 				        $(".element").typed({
@@ -48,7 +48,7 @@
 	<div class="warpper">
 			<div class="instepONE">
 			<div class="number_step1">
-				<img src="images/01.png" alt="">
+				<img src="{{{ asset('images/01.png') }}}" alt="">
 			</div>
 			<h1>GET<span style="color:#ffc80a;">STARTED</span></h1>
 			<h2>But I must explain to you how all this mistaken idea of denouncing </h2>
@@ -72,7 +72,7 @@
 		<h2>Type $0 to download for free, or any sum if you want to support us and donate</h2>
 
 		<div class="number_step2">
-				<img src="images/02.png" alt="">
+				<img src="{{{ asset('images/02.png') }}}" alt="">
 		</div>
 		
 		<div class="fanpage">
@@ -191,7 +191,7 @@
 					<!-- Thumbnail -->
 					<a href="#">
 					<div class="thumbnail-post">
-						<img src="images/content/1.jpg">
+						<img src="{{{ asset('images/content/1.jpg') }}}">
 					</div>
 					</a>
 					<!-- Descriotion -->
@@ -237,7 +237,7 @@
 					<!-- Thumbnail -->
 					<a href="#">
 					<div class="thumbnail-post">
-						<img src="images/content/1.jpg">
+						<img src="{{{ asset('images/content/1.jpg') }}}">
 					</div>
 					</a>
 					<!-- Descriotion -->
@@ -283,7 +283,7 @@
 					<!-- Thumbnail -->
 					<a href="#">
 					<div class="thumbnail-post">
-						<img src="images/content/1.jpg">
+						<img src="{{{ asset('images/content/1.jpg') }}}">
 					</div>
 					</a>
 					<!-- Descriotion -->
@@ -336,7 +336,7 @@
 	<div class="team">
 		<ul>
 			<li>
-				<figure class="snip1321"><img src="images/team/pleng.png" alt="sq-sample26"/>
+				<figure class="snip1321"><img src="{{{ asset('images/team/pleng.png') }}}" alt="sq-sample26"/>
   					<figcaption><i class="ion-upload"></i>
     					<h4>Pongpanot Na Ubon</h4>
     					<h2>PLENG</h2>
@@ -346,7 +346,7 @@
 			</li>
 
 			<li>
-				<figure class="snip1321"><img src="images/team/top.png" alt="sq-sample26"/>
+				<figure class="snip1321"><img src="{{{ asset('images/team/top.png') }}}" alt="sq-sample26"/>
   					<figcaption><i class="ion-upload"></i>
     					<h4>Noppanut Ploywong    </h4>
     					<h2>TOP</h2>
@@ -356,7 +356,7 @@
 			</li>
 
 			<li>
-				<figure class="snip1321"><img src="images/team/song.png" alt="sq-sample26"/>
+				<figure class="snip1321"><img src="{{{ asset('images/team/song.png') }}}" alt="sq-sample26"/>
   					<figcaption><i class="ion-upload"></i>
     					<h4>Paroot Satjawanit‎</h4>
     					<h2>SONG</h2>
@@ -366,7 +366,7 @@
 			</li>
 
 			<li>
-				<figure class="snip1321"><img src="images/team/pong.png" alt="sq-sample26"/>
+				<figure class="snip1321"><img src="{{{ asset('images/team/pong.png') }}}" alt="sq-sample26"/>
   					<figcaption><i class="ion-upload"></i>
     					<h4>Pongsaton Petsuk</h4>
     					<h2>PONG</h2>
@@ -376,7 +376,7 @@
 			</li>
 
 			<li>
-				<figure class="snip1321"><img src="images/team/sky.png" alt="sq-sample26"/>
+				<figure class="snip1321"><img src="{{{ asset('images/team/sky.png') }}}" alt="sq-sample26"/>
   					<figcaption><i class="ion-upload"></i>
     					<h4>Thanawat Loardkawe</h4>
     					<h2>SKY DOG</h2>
