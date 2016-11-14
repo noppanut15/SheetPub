@@ -83,7 +83,7 @@ a{
 }
 
 .menu_right ul li {
-	float: right;
+	float: left;
 	list-style: none;
 	flex-grow: 1;
 	padding: 10px;

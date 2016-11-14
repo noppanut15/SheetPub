@@ -146,7 +146,7 @@ function thai_date($time){
 				<div class="no_content" style="height: 600px; width: 100%; text-align: center;">
 				<i style="font-size: 10em; color: #222222; margin: 90px 0 15px 0;" class="fa fa-pencil-square" aria-hidden="true"></i>
 					<h2 style="margin-bottom: 10px;">No Content</h2>
-					@if (Session::has('userId'))	
+					@if (Session::get('userId') == $record->userId)	
 					<p>ยังไม่มีเนื้อหาของคุณเลย มา<a style="color:#ffcb18; font-weight: bold;" href="{{ url('content/new') }}">เริ่มแชร์ชีทฉบับแรก</a>ของคุณกันเถอะ</p>
 				@endif
 				</div>

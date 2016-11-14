@@ -59,7 +59,7 @@ class UserProfile extends Controller
 
         if (!empty($image)){
         	$destinationPath = 'images/avatars'; // upload path
-        	if (file_exists($destinationPath.'/'.$fileName))
+        	if (file_exists($destinationPath.'/'.$fileName) && Session::get('profilePic') != '../avatar.png')
         		unlink($destinationPath.'/'.$fileName); // delete old profile pic
 	        $extension = $image->getClientOriginalExtension(); // getting image extension
 	        $fileName = $username.'.'.$extension; // renameing image
