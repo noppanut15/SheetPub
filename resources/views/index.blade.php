@@ -9,7 +9,13 @@
 		}
 	</style>
 @endsection
-
+@section('custom-js')
+	@if(Session::has('userId'))
+		<script src="{{{ asset('js/script-logedin.js') }}}" ></script>
+	@else
+		<script src="{{{ asset('js/script-nologin.js') }}}" ></script>
+	@endif
+@endsection
 @section('header-custom')
 <!-- HEAD -->
 <header>
@@ -32,7 +38,7 @@
 		</h1>
 		<h2 class="animated bounce">แหล่งรวมชีทมากกว่า 1000+ ชีท ที่คุณจะได้ร่วมแบ่งปัน</h2>
 		<div class="button_border">
-			<a id="friststep" href="#step_1">GET STARTED</a>	
+			<a id="friststep" href="{{ $btn_link }}">{{ $btn_msg }}</a>	
 		</div>
 	</div>
 
@@ -48,7 +54,7 @@
 
 
 </header>
-
+@if(!Session::has('userId'))
 <section id="step_1">
 	<div class="warpper">
 			<div class="instepONE">
@@ -101,16 +107,9 @@
 				<a href="#step_3">Next Step</a>
 			</div>
 		</div>
-
-		
 	</div>
-
-
-
-
-	
 </section>
-
+@endif
 
 <section id="step_3">
 		<div class="movestep3">
