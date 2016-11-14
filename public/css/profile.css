@@ -146,6 +146,7 @@ a {
 .tab2 {
 	float: left;
 	background-color: #fff;
+	width: 100%;
 }
 
 .tab2 {
@@ -153,17 +154,26 @@ a {
 
 .tab2 ul {
 
-	/* padding: 20px; */
-	float: left;
+/* padding: 20px; */
+
+float: left;
+
+width: 100%;
 }
 
 .tab2 ul li {
 
-	/* margin-top: 10px; */
-	list-style: none;
-	float: left;
-	width: 100%;	/* padding: 15px; */
-	border-bottom: 1px solid #ccc;
+/* margin-top: 10px; */
+
+list-style: none;
+
+float: left;
+
+width: 100%;
+
+/* padding: 15px; */
+
+border-bottom: 1px solid #ccc;
 }
 
 .tab2 ul li a {
@@ -183,6 +193,9 @@ a {
 .post {
 	display: flex;
 	padding: 20px;
+	flex-direction: row;
+	width: 100%;
+	float: left;
 }
 
 .post_left {
@@ -190,8 +203,9 @@ a {
 }
 
 .post_right {
-	width: 55%;
+	width: 25%;
 	text-align: right;
+	padding-top: 33px;
 }
 
 .post_right a{
@@ -240,4 +254,15 @@ a.button {
 .star_vote div i {
     font-size: 1.4em;
     color: #ffcb18;
+}
+
+.no_content h2{
+	color: #222;
+	font-family: 'Monster';
+}
+
+.no_content p{
+	color: #222;
+	font-size: 14px;
+	font-family: Arial, Helvetica, Sans-serif, Geneva, Tahoma;
 }

@@ -329,7 +329,7 @@ body{
 }
 
 .img_avatar{
-	width: 23%;
+	width: 45%;
 	text-align: center;
 }
 
@@ -348,7 +348,7 @@ body{
 	float:left;
 	width: 100%;
 	color: #fff;
-	padding:20px;
+	padding: 12px;
 	background-color: #ffc90c;
 	border:none;
 	font-family: 'Monster';

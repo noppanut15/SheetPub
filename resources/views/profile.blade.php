@@ -143,7 +143,7 @@ function thai_date($time){
 			</ul>
 		</div>
 						
-				<div style="height: 600px; width: 100%; text-align: center;">
+				<div class="no_content" style="height: 600px; width: 100%; text-align: center;">
 				<i style="font-size: 10em; color: #222222; margin: 90px 0 15px 0;" class="fa fa-pencil-square" aria-hidden="true"></i>
 					<h2 style="margin-bottom: 10px;">No Content</h2>
 					@if (Session::get('userId') == $record->userId)	
