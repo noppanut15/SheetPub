@@ -75,7 +75,7 @@
 	<div class="in-content">
 		<div class="content_left">
 			<div class="title">
-				<a href="#">
+				<a href="javascript:void(0);">
 					<h1>
 					{{ $content->topic }}
 					</h1>
