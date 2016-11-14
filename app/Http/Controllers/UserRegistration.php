@@ -23,12 +23,15 @@ class UserRegistration extends Controller
             'password_confirmation' => 'required',
             'avatar' => 'image'
         ]);
+        $fileName = '../avatar.png';
 
         $image = $request->avatar;
-        $destinationPath = 'images/avatars'; // upload path
-        $extension = $image->getClientOriginalExtension(); // getting image extension
-        $fileName = $request->username.'.'.$extension; // renameing image
-        $image->move($destinationPath, $fileName);
+        if (!empty($image)){
+            $destinationPath = 'images/avatars'; // upload path
+            $extension = $image->getClientOriginalExtension(); // getting image extension
+            $fileName = $request->username.'.'.$extension; // renameing image
+            $image->move($destinationPath, $fileName);
+        }
 
         DB::table('USER')->insert([
             'firstName' => $request->firstname,
