@@ -1,6 +1,6 @@
 <?php
 
-namespace toppyapp\Providers;
+namespace sheetpub\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'toppyapp\Model' => 'toppyapp\Policies\ModelPolicy',
+        'sheetpub\Model' => 'sheetpub\Policies\ModelPolicy',
     ];
 
     /**

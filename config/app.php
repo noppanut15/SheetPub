@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'SheetPub',
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Bangkok',
 
     /*
     |--------------------------------------------------------------------------
@@ -162,6 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -172,11 +173,11 @@ return [
         /*
          * Application Service Providers...
          */
-        toppyapp\Providers\AppServiceProvider::class,
-        toppyapp\Providers\AuthServiceProvider::class,
-        // toppyapp\Providers\BroadcastServiceProvider::class,
-        toppyapp\Providers\EventServiceProvider::class,
-        toppyapp\Providers\RouteServiceProvider::class,
+        sheetpub\Providers\AppServiceProvider::class,
+        sheetpub\Providers\AuthServiceProvider::class,
+        // sheetpub\Providers\BroadcastServiceProvider::class,
+        sheetpub\Providers\EventServiceProvider::class,
+        sheetpub\Providers\RouteServiceProvider::class,
 
     ],
 
@@ -225,6 +226,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

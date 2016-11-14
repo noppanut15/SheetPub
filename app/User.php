@@ -1,6 +1,6 @@
 <?php
 
-namespace toppyapp;
+namespace sheetpub;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -14,6 +14,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'USER'
     protected $fillable = [
         'name', 'email', 'password',
     ];

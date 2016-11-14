@@ -1,0 +1,413 @@
+
+body{
+	background-color: #ffc90c;
+	   background-repeat: repeat;
+    background-image: url(../images/bg.png);
+}
+
+.move_icon {
+	width: 100%;
+	height: 100%;
+	background-repeat: repeat;
+
+	position: absolute;
+	-webkit-background-size: contain;
+	background-size: contain;
+	top: 0;
+	z-index: 1;
+}
+.bg_login_page{
+	width:100%;
+	height: 50%;
+	position: absolute;
+	background-color: #ffc90c;
+	bottom: 0;
+	z-index: 1;
+}
+
+.login{
+	width:70%;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.logo{
+	width:100%;
+	text-align: center;
+	font-family: 'Monster';
+	margin-bottom: 30px;
+	word-wrap:break-word;
+	padding-top: 6%;
+}
+
+
+.logo h1{
+	font-size: 7.5vw;
+	color: #fff;
+}
+
+.login_box{
+	width: 50%;
+	margin: 0 auto;
+	position: relative;
+	z-index: 9;
+	padding-top: 5%;
+}
+
+.bglogin{
+	width: 100%;
+	background-color: #181818;
+	bottom: 0;
+	z-index: 1;
+	float: left;
+}
+.login_left{
+	position: relative;
+	float: left;
+	width: 34%;
+	padding: 4%;
+}
+
+/*-- Login Left --*/
+.register_inlog{
+	float: left;
+	position: relative;
+	z-index: 9;
+	width: 100%;
+	text-align: center;
+	float: left;
+	padding-top: 25%;
+	padding-bottom: 25%;
+	word-wrap: break-word;
+}
+
+
+.register_inlog h1{
+	color: #fff;
+	font-family: 'Muller_B';
+	margin-bottom: 20px;
+
+}
+
+.register_inlog a{
+	padding: 10px 0px 10px 0px;
+	/* border-radius: 360px; */
+	-moz-border-radius:360px;
+	background-color: #ffc90c;
+	color: #222;
+	font-family: 'Muller_B';
+	text-decoration: none;
+	width: 100%;
+	float: left;
+	box-shadow: 0px 5px 0px 0px #deb628;
+	transition: all .1s ease;
+}
+
+.register_inlog a:active{
+	transform: translate(0px,5px);
+	-webkit-transform: translate(0px,5px);
+	box-shadow: 0px 1px 0px 0px #deb628;
+}
+
+.login_right{
+	position: relative;
+	float: right;
+	width: 48%;
+	padding: 4%;
+	background-color: #fafafa;
+}
+
+.login_right ul{
+
+}
+
+.login_right ul li{
+	list-style: none;
+	width:100%;
+	float: left;
+	margin-bottom: 10px;
+	/* width: 100%; */
+}
+
+.login_right ul li h1{
+	font-family: 'Muller_B';
+	font-size: 4vw;
+	margin-bottom: 20px;
+}
+
+.login_right ul li h2{
+	margin-bottom: 10px;
+	font-family: 'Muller_B';
+	font-size: 13px;
+}
+
+.login_right ul li span{
+	font-family: 'Muller_L';
+	font-size: 13px;
+}
+.namel_regis{
+	float: left;
+	width: 50%;
+}
+.namel_regis input{
+	font-size: 1.3rem;
+	background-color: none;
+	padding: 10px;
+	width: 80%;
+	color: #222;
+	border-radius: 2px;
+	border: 1px solid #ffc90c;
+}
+
+.namel_regis input:focus{
+	color: #222;
+	border:1px solid #222;
+	background-color:none;
+}
+
+.text_input{
+	color: #222;
+	font-size: 1.3rem;
+	background: none;
+	padding: 10px;
+	float: left;
+	width: 100%;
+	border-radius: 2px;
+	border: 1px solid #ffc90c;
+}
+
+.text_input:focus{
+	color: #222;
+}
+.forget_login{
+	width: 100%;
+	text-align: center;
+}
+
+.forget_login a{
+	color: #222;
+	font-size: 14px;
+	padding-top:15px;
+	text-decoration: none;
+	font-family: 'Muller_B';
+}
+
+.signin_login a{
+	float: left;
+	margin-right: 10px;
+	padding: 15px 15px 15px 15px;
+
+	-moz-border-radius:360px;
+	background-color: #222222;
+	color: #fff;
+	font-family: 'Muller_B';
+	text-decoration: none;
+	position: relative;
+	text-align: center;
+	box-shadow: 0px 5px 0px 0px #3a3a3a;
+	transition: all .1s ease;
+}
+
+.signup_login{
+	float: left;
+	margin-right: 10px;
+	padding: 15px 15px 15px 15px;
+	background-color: #222;
+	color: #ffffff;
+	font-family: 'Muller_B';
+	text-decoration: none;
+	position: relative;
+	border-bottom: 10px solid #131313;
+	width: 100%;
+	text-align: center;
+	transition: all .1s ease;
+}
+
+.signup_login:active{
+	transform: translate(0px,5px);
+	-webkit-transform: translate(0px,5px);
+	border-bottom: 5px solid #131313;
+}
+
+
+.login_right ul li a::before{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 300px;
+    content: '';
+    background-color: #fff;
+    transition:all 0.5s ease;
+    
+}
+
+.login_right ul li:hover a::before{
+	top: 0;
+}
+
+
+
+/*-- Register --*/
+
+.bgregister{
+	width: 100%;
+	bottom: 0;
+	z-index: 1;
+	/* background-color: #fbfbfb; */
+	float: left;
+	margin-bottom: 50px;
+}
+.register_box {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 9;
+    padding-top: 1%;
+}
+
+.register_box:active{
+	
+}
+.register{
+	position: relative;
+	float: right;
+	/* width: 100%; */
+	background-color: #fff;
+	padding: 9% 15% 7% 10%;
+	border-radius: 2px;
+}
+
+.register ul{
+	background-color: #ccc;
+}
+
+.register ul li{
+	list-style: none;
+	width:100%;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.register ul li h1{
+	font-family: 'Muller_B';
+	font-size: 4vw;
+	margin-bottom: 20px;
+}
+
+.register ul li h2{
+	margin-bottom: 10px;
+	font-family: 'Muller_B';
+	font-size: 13px;
+}
+
+.register ul li span{
+	font-family: 'Muller_L';
+	font-size: 13px;
+}
+
+.forget_login a{
+	color: #222;
+	font-size: 14px;
+	padding-top:15px;
+	text-decoration: none;
+	font-family: 'Muller_B';
+}
+.register ul li a::before{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 300px;
+    content: '';
+    background-color: #fff;
+    transition:all 0.5s ease;
+    
+}
+
+.register ul li:hover a::before{
+	top: 0;
+}
+
+.img_avatar{
+	width: 23%;
+	text-align: center;
+}
+
+
+.img_avatar img{
+	width: 100%;
+}
+
+.button_uploadavatar{
+	width:100%;
+	margin: 0 auto;
+	padding: 10px 0px 10px 0px;
+}
+
+.button_uploadavatar button{
+	float:left;
+	width: 100%;
+	color: #fff;
+	padding:20px;
+	background-color: #ffc90c;
+	border:none;
+	font-family: 'Monster';
+}
+
+.typed-cursor {
+	opacity: 1;
+	-webkit-animation: blink 0.7s infinite;
+	-moz-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+
+}
+
+@-webkit-keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width:1024px){
+	.login_left{
+		width: 100%;
+		background-color: #181818;
+	}
+
+	.login_right {
+		float:left;
+		width: 100%;
+		border-radius:0px;
+	}
+
+	.register_box{
+		width: 100%;
+	}
+	.register_inlog {
+    padding-top: 5%;
+    padding-bottom: 5%;
+ }
+}
+

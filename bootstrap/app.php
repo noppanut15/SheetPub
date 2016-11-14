@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    toppyapp\Http\Kernel::class
+    sheetpub\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    toppyapp\Console\Kernel::class
+    sheetpub\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    toppyapp\Exceptions\Handler::class
+    sheetpub\Exceptions\Handler::class
 );
 
 /*

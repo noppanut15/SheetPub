@@ -1,6 +1,6 @@
 <?php
 
-namespace toppyapp\Providers;
+namespace sheetpub\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'toppyapp\Events\SomeEvent' => [
-            'toppyapp\Listeners\EventListener',
+        'sheetpub\Events\SomeEvent' => [
+            'sheetpub\Listeners\EventListener',
         ],
     ];
 

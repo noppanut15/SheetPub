@@ -1,6 +1,6 @@
 <?php
 
-namespace toppyapp\Http;
+namespace sheetpub\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -24,11 +24,11 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \toppyapp\Http\Middleware\EncryptCookies::class,
+            \sheetpub\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \toppyapp\Http\Middleware\VerifyCsrfToken::class,
+            \sheetpub\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -50,7 +50,9 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \toppyapp\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \sheetpub\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'RedirectIfAuthenticated' => \sheetpub\Http\Middleware\RedirectIfAuthenticated::class,
+        'RedirectIfNotAuthenticated' => \sheetpub\Http\Middleware\RedirectIfNotAuthenticated::class,
     ];
 }

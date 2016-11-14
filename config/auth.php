@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => toppyapp\User::class,
+            'model' => sheetpub\User::class,
         ],
 
         // 'users' => [
