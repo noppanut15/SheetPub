@@ -48,7 +48,7 @@
 	</div>
 
 	<div class="animated bounceInUp bbonweb">
-		<img src="images/bbonweb.png" alt="paper">
+		<img src="{{{ asset('images/bbonweb.png') }}}" alt="paper">
 	</div>
 	
 
