@@ -119,24 +119,6 @@
 					</p>
 					<div id="rateYo"></div>
 
-					<script>
-						$(function () { 
-						  $("#rateYo").rateYo({
-						    normalFill: "#A0A0A0",
-						    ratedFill: "#ffcb18",
-						    rating: {{ $content->voteScore/max(1, $content->votePopulation) }},
-						    readOnly: {{ $viewOnly }},
-						    onSet: function (rating, rateYoInstance) {
- 								  $("#rateYo").rateYo("option", "readOnly", true);
-							      $.get('/vote/{{ $content->contentId }}/'+rating, function(data, status){
-										if (status == 'success')
-											$("#rateYo").rateYo("option", "readOnly", true);
-							      });
-							    }
-						  });
-						 
-						});
-					</script>
 				</li>
 				<li>
 					<a href="{{ asset('uploads/files') }}/{{ $content->file }}" style="float: left;width: 100%;">
@@ -146,7 +128,36 @@
 			</ul>
 		</div>
 	</div>
+
+	@if(!Session::has('userId'))
+		<div class="lernmore">
+			<div class="btn_lernmore">
+			<h1>New to Sheetpub ?</h1>
+				<a href="{{ url('/') }}">Lern More</a>
+		</div>
+	@endif
 </div>
+
+
+
+<script>
+	$(function () { 
+	  $("#rateYo").rateYo({
+	    normalFill: "#A0A0A0",
+	    ratedFill: "#ffcb18",
+	    rating: {{ $content->voteScore/max(1, $content->votePopulation) }},
+	    readOnly: {{ $viewOnly }},
+	    onSet: function (rating, rateYoInstance) {
+				  $("#rateYo").rateYo("option", "readOnly", true);
+		      $.get('/vote/{{ $content->contentId }}/'+rating, function(data, status){
+					if (status == 'success')
+						$("#rateYo").rateYo("option", "readOnly", true);
+		      });
+		    }
+	  });
+	 
+	});
+</script>
 <!--
 <div class="bg_login_page">
 </div>

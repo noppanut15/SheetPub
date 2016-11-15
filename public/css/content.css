@@ -235,3 +235,38 @@ width: 50px;
 
 text-align: center;
 }
+
+
+.lernmore{
+	width: 100%;
+	/* height: 300px; */
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	background: #222222;
+	background-size: cover;
+	/* background-image: url(../images/lernmore.png); */
+}
+.btn_lernmore{
+	padding-top: 7%;
+	padding-bottom: 7%;
+	width: 50%;
+	margin:0 auto;
+	text-align: center;
+}
+
+.btn_lernmore h1{
+	font-family: 'Monster';
+	margin-bottom: 30px;
+	color: #fff;
+}
+
+.btn_lernmore a{
+	color: #fff;
+	padding:10px 50px 10px 50px;
+	font-family: 'Monster';
+	background-color: #ffcb18;
+	border-bottom: 4px solid #efbb09;
+}
+
+
