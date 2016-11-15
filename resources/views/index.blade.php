@@ -61,8 +61,9 @@
 			<div class="number_step1">
 				<img src="{{{ asset('images/01.png') }}}" alt="">
 			</div>
-			<h1>GET<span style="color:#ffc80a;">STARTED</span></h1>
-			<h2>But I must explain to you how all this mistaken idea of denouncing </h2>
+			<h1>YOUR<span style="color:#ffc80a;">SHEET</span></h1>
+			<h2>Share Once, Surf Anywhere</h2>
+			<h2>ร่วมเรียนรู้และแบ่งปันเนื้อหาของคุณ ผ่านชีทออนไลน์ที่ทุกคนสามารถเข้าถึงได้ทุกที่ทุกเวลา</h2>
 			<div class="button_bg ">
 				<a href="{{ url('/register') }}">REGISTER</a>	
 			</div>
@@ -79,8 +80,8 @@
 
 	<div class="warpper">
 		<div class="instepTWO">
-		<h1>FOLLOW<span style="color:#fff;">ME</span></h1>
-		<h2>Type $0 to download for free, or any sum if you want to support us and donate</h2>
+		<h1>FOLLOW<span style="color:#fff;">US</span></h1>
+		<h2>ไม่พลาดทุกข่าวสารความเคลื่อนไหว และชีทใหม่ๆ ที่พร้อมจะแบ่งปันให้กับคุณ</h2>
 
 		<div class="number_step2">
 				<img src="{{{ asset('images/02.png') }}}" alt="">
@@ -115,13 +116,10 @@
 		<div class="movestep3">
 	<div class="warpper">
 		<div class="instepTHREE">
-			<h1>RECENT
-				<span style="color:#ffc80a;">
-				POST
-				</span>
+			<h1>FRESH<span style="color:#ffc80a;">SHEET</span>
 			</h1>
-			<span>
-				It may be the media's veruse of words like "breakthrough"?
+			<span style="font-family: 'Supermarket';">
+				ชีทใหม่ล่าสุด
 			</span>
 		</div>
 
@@ -185,13 +183,9 @@
 <section id="step_4">
 	<div class="warpper">
 		<div class="instepFOUR">
-			<h1>
-			OUR 
-			<span style="color:#fff;">
-			TEAM
-			</span>
+			<h1>OUR<span style="color:#fff;">TEAM</span>
 			</h1>
-			<span>It may be the media's veruse of words like "breakthrough"?</span>
+			<!-- <span>It may be the media's veruse of words like "breakthrough"?</span> -->
 			
 		</div>
 	</div>
