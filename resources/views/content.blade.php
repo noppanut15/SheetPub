@@ -133,7 +133,7 @@
 		<div class="lernmore">
 			<div class="btn_lernmore">
 			<h1>New to Sheetpub ?</h1>
-				<a href="{{ url('/') }}">Lern More</a>
+				<a href="{{ url('/') }}">Learn More</a>
 		</div>
 	@endif
 </div>
