@@ -8,11 +8,6 @@ use Session;
 
 class ContentController extends Controller
 {
-	public function __construct()
-    {
-        $this->middleware('RedirectIfNotAuthenticated');
-    }
-
 	public function viewByCategory($catId) {
         $rows = DB::table('CONTENT')->join('CATEGORY', 'CONTENT.catId', '=', 'CATEGORY.catId')
                     ->select('CONTENT.*', 'CATEGORY.catName')
@@ -52,7 +47,7 @@ class ContentController extends Controller
             $vote = DB::table('VOTE')->where('userId', '=', Session::get('userId'))
         ->where('contentId', '=', $contentId)->count();
             $viewOnly = 'false';
-            if ($vote == 1)
+            if ($vote == 1 or !Session::has('userId'))
                 $viewOnly = 'true';
 
 			return view('content', [

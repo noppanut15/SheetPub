@@ -25,10 +25,10 @@
                     <i class="fa fa-bars" aria-hidden="true"></i>
                     </h1>
                     <ul>
-                        @if (Session::has('userId'))
                             <li><a href="{{ url('/feed') }}">FEED</a></li>
                             <li><a href="{{ url('/category') }}">CATEGORY</a></li>
                             <li><a href="{{ url('/trending') }}">TRENDING</a></li>
+                        @if (Session::has('userId'))
                             <li><a href="{{ url('/content/new') }}">NEW POST</a></li>
                             <li><a href="{{ url('/profile') }}">PROFILE</a></li>
                             <li><a href="{{ url('/logout') }}">LOGOUT</a></li>
@@ -42,7 +42,6 @@
             <!-- End Responsive -->
             <!-- Main Menu -->
             <!-- Menu Left -->
-            @if (Session::has('userId'))
             <div id="menu">
                 <ul>
                     <li><a href="{{ url('/feed') }}">FEED</a></li>
@@ -80,7 +79,7 @@
                     <li><a href="{{ url('/trending') }}">TRENDING</a></li>
                 </ul>
             </div>
-            @endif
+
             <!-- Menu Right -->
             <div class="menu_right">
             @if (Session::has('userId'))

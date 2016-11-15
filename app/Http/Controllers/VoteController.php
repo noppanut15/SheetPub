@@ -8,11 +8,6 @@ use Session;
 
 class VoteController extends Controller
 {
-	public function __construct()
-    {
-        $this->middleware('RedirectIfNotAuthenticated');
-    }
-
     public function vote($contentId, $score){
     	$row = DB::table('VOTE')->where('userId', '=', Session::get('userId'))
     	->where('contentId', '=', $contentId)->count();

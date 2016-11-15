@@ -9,11 +9,6 @@ use Hash;
 
 class UserProfile extends Controller
 {
-	public function __construct()
-    {
-        $this->middleware('RedirectIfNotAuthenticated');
-    }
-
     public function view($userId=null){
     	if (is_null($userId))
     		$userId = Session::get('userId');
