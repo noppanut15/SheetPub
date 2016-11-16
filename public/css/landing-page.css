@@ -21,6 +21,7 @@ html, *{
 	#section_1{
 		height: 100vh;
 		background-image: url('../images/bg-landing-page.jpg');
+		background-size: cover;
 	}
 	.wrapper{
 		padding-top: 8%;
