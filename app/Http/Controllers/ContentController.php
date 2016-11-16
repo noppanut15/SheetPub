@@ -10,20 +10,23 @@ class ContentController extends Controller
 {
 	public function viewByCategory($catId) {
         $rows = DB::table('CONTENT')->join('CATEGORY', 'CONTENT.catId', '=', 'CATEGORY.catId')
-                    ->select('CONTENT.*', 'CATEGORY.catName')
+                    ->select('CONTENT.*', 'CATEGORY.catName', 
+                        DB::raw('voteScore/votePopulation as score'))
                     ->where('CATEGORY.catId', '=', $catId)
                     ->latest('timestamp')->get();
         $cat = DB::table('CATEGORY')->select('catNameThai')->where('catId', '=', $catId)
         ->get()->first();
+
         return view('category', [
             'rows' => $rows,
-            'catNameThai' => $cat->catNameThai
+            'catNameThai' => $cat->catNameThai,
         ]);
 	}
 
     public function viewByFeed(){
         $rows = DB::table('CONTENT')->join('CATEGORY', 'CONTENT.catId', '=', 'CATEGORY.catId')
-                    ->select('CONTENT.*', 'CATEGORY.catName')
+                    ->select('CONTENT.*', 'CATEGORY.catName', 
+                        DB::raw('voteScore/votePopulation as score'))
                     ->latest('timestamp')->get();
         return view('feed', [
             'rows' => $rows
@@ -32,8 +35,9 @@ class ContentController extends Controller
 
     public function viewByTrend(){
         $rows = DB::table('CONTENT')->join('CATEGORY', 'CONTENT.catId', '=', 'CATEGORY.catId')
-                    ->select('CONTENT.*', 'CATEGORY.catName', DB::raw('(CONTENT.voteScore/CONTENT.votePopulation) as rating'))
-                    ->orderby('rating', 'timestamp')->limit(15)->get();
+                    ->select('CONTENT.*', 'CATEGORY.catName', 
+                        DB::raw('voteScore/votePopulation as score'))
+                    ->orderby('score', 'timestamp')->limit(15)->get();
         return view('trending', [
             'rows' => $rows
         ]);

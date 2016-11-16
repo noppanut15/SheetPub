@@ -785,6 +785,8 @@ footer {
 	color: #222;
 	font-size: 24px;
 	margin-top: 25px;
+	line-height: 1.2em;
+	margin-bottom: 12px;
 }
 
 .description-post a {

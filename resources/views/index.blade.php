@@ -128,9 +128,6 @@
 
 	<div class="more_co">
 	@foreach ($contents as $content)
-		@php
-			$score = $content->voteScore/max(1, $content->votePopulation)
-		@endphp
 		<!-- CONTENT CARD -->
 			<div class="content">
 					<!-- Date And Time -->
@@ -141,11 +138,11 @@
 					<!-- VOTE -->
 					<div class="star_vote">
 						<ul>
-							<li><i style="@if($score>=1) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i style="@if($score>=2) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i style="@if($score>=3) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i style="@if($score>=4) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i style="@if($score==5) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i style="@if($content->score>=1) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i style="@if($content->score>=2) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i style="@if($content->score>=3) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i style="@if($content->score>=4) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i style="@if($content->score==5) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
 						</ul>
 					</div>
 					<!-- Thumbnail -->
@@ -166,7 +163,11 @@
 							<a href="{{ url('content/view') }}/{{ $content->contentId }}">
 								<h1>{{ $content->topic }}</h1>
 							</a>
-							<h2>{{ $content->description }}</h2>
+							@if (mb_strlen($content->description, 'UTF-8') > 140)
+								<h2>{{ mb_substr($content->description, 0, 140, 'UTF-8') }}...</h2>
+							@else
+								<h2>{{ $content->description }}</h2>
+							@endif
 						</div>
 					</div>
 			</div>
@@ -200,7 +201,7 @@
     					<h4>Pongpanot Na Ubon</h4>
     					<h2>PLENG</h2>
   					</figcaption>
-  					<a href="#"></a>
+  					<a href="https://www.facebook.com/pleng.prongpanot" target="_blank"></a>
 				</figure>			
 			</li>
 
@@ -210,7 +211,7 @@
     					<h4>Noppanut Ploywong</h4>
     					<h2>TOP</h2>
   					</figcaption>
-  					<a href="#"></a>
+  					<a href="https://www.facebook.com/noppanut" target="_blank"></a>
 				</figure>	
 			</li>
 
@@ -220,7 +221,7 @@
     					<h4>Paroot Satjawanit‎</h4>
     					<h2>SONG</h2>
   					</figcaption>
-  					<a href="#"></a>
+  					<a href="https://www.facebook.com/justdrinktoxic" target="_blank"></a>
 				</figure>	
 			</li>
 
@@ -230,7 +231,7 @@
     					<h4>Pongsaton Petsuk</h4>
     					<h2>PONG</h2>
   					</figcaption>
-  					<a href="#"></a>
+  					<a href="https://www.facebook.com/Pongdekba" target="_blank"></a>
 				</figure>	
 			</li>
 
@@ -240,7 +241,7 @@
     					<h4>Thanawat Loardkawe</h4>
     					<h2>SKY DOG</h2>
   					</figcaption>
-  					<a href="#"></a>
+  					<a href="https://www.facebook.com/hideokyjima" target="_blank"></a>
 				</figure>	
 			</li>
 

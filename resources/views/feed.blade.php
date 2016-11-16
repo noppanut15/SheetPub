@@ -25,9 +25,7 @@
 	</div>
 </div>
 @foreach ($rows as $row) 
-	@php
-		$score = $row->voteScore/max(1, $row->votePopulation)
-	@endphp
+
 <div class="wall">
 	<!-- CONTENT 1 -->
 	<div class="wall-item">
@@ -40,13 +38,13 @@
 			<!-- VOTE -->
 			<div class="star_vote">
 				<ul>
-					<li><i style="@if($score>=1) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i style="@if($row->score>=1) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
 
-					<li><i style="@if($score>=2) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
-					<li><i style="@if($score>=3) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i style="@if($row->score>=2) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i style="@if($row->score>=3) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
 
-					<li><i style="@if($score>=4) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
-					<li><i style="@if($score==5) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i style="@if($row->score>=4) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+					<li><i style="@if($row->score==5) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
 				
 				</ul>
 			</div>
@@ -68,7 +66,11 @@
 					<a href="{{ url('content/view') }}/{{ $row->contentId }}">
 						<h1>{{ $row->topic }}</h1>
 					</a>
-					<h2>{{ $row->description }}</h2>
+					@if (mb_strlen($row->description, 'UTF-8') > 140)
+						<h2>{{ mb_substr($row->description, 0, 140, 'UTF-8') }}...</h2>
+					@else
+						<h2>{{ $row->description }}</h2>
+					@endif
 				</div>
 				
 			</div>
