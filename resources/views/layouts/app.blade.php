@@ -14,12 +14,14 @@
         <link rel="stylesheet" href="{{{ asset('css/animate.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/menu.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/font-awesome.min.css') }}}">
+        <link rel="stylesheet" href="{{{ asset('css/black-ribbon.css') }}}">
         @yield('custom-css')
         <script src ="{{{ asset('js/jquery-3.1.1.min.js') }}}" type="text/javascript"></script>
         <script src="{{{ asset('js/script-menu.js') }}}" ></script>
         @yield('custom-js')
     </head>
     <body>
+    <img src="{{ asset('images/black_ribbon_top_left.png') }}" class="black-ribbon stick-top stick-left"/>
     @yield('header-custom')
     <!-- Menu -->
     <nav>
@@ -35,7 +37,7 @@
                             <li><a href="{{ url('/category') }}">CATEGORY</a></li>
                             <li><a href="{{ url('/trending') }}">TRENDING</a></li>
                         @if (Session::has('userId'))
-                            <li><a href="{{ url('/content/new') }}">NEW POST</a></li>
+                            <li><a href="{{ url('/content/new') }}">ADD NEW SHEET</a></li>
                             <li><a href="{{ url('/profile') }}">PROFILE</a></li>
                             <li><a href="{{ url('/logout') }}">LOGOUT</a></li>
                         @else
@@ -50,6 +52,9 @@
             <!-- Menu Left -->
             <div id="menu">
                 <ul>
+                	@if (Session::has('userId'))
+                	<li class="button_menu_invert"><a href="{{ url('/content/new') }}"><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp; NEW SHEET</a></li>
+                	@endif
                     <li><a href="{{ url('/feed') }}">FEED</a></li>
                     <li>
                         <a href="#" class="category_menu">CATEGORY
@@ -103,9 +108,6 @@
                     <li class="menudrop_user">
                         <ul>
                             <li>
-                                <a href="{{ url('/content/new') }}">NEW POST</a>
-                            </li>
-                            <li>
                                 <a href="{{ url('/profile') }}">PROFILE</a>
                             </li>
                             <li>
@@ -129,5 +131,6 @@
     </nav>
     <!-- End Main Menu -->
     @yield('content')
-    </body>
+    
+</body>
 </html>

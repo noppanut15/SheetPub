@@ -134,6 +134,24 @@ a{
 	color: #ffc80a !important;
 	background-color: #fff;
 }
+.button_menu_invert {
+}
+
+.button_menu_invert a {
+	color: #ffc80a !important;
+	font-family: 'Monster';
+	border: 1px solid #fff;
+	padding: 15px 25px 15px 25px;
+	border-radius: 360px;
+	background-color: #fff;
+	transition: all 0.5s ease;
+}
+
+.button_menu_invert a:hover {
+	color: #fff !important;
+	background-color: transparent;
+}
+
 
 .profile_menu {
 	border-radius: 360px;
