@@ -16,6 +16,10 @@ Route::get('/', [
     'uses' => 'IndexController@index'
 ]);
 
+Route::get('/his-journey-to-heaven', function() {
+    return view('landing-page');
+});
+
 Route::get('category/{catId}', [
     'uses' => 'ContentController@viewByCategory'
 ]);

@@ -21,7 +21,7 @@
         @yield('custom-js')
     </head>
     <body>
-    <img src="{{ asset('images/black_ribbon_top_left.png') }}" class="black-ribbon stick-top stick-left"/>
+    <a href="{{ url('/his-journey-to-heaven') }}" alt="เสด็จสู่สวรรคาลัย"><img src="{{ asset('images/black_ribbon_top_left.png') }}" class="black-ribbon stick-top stick-left"/></a>
     @yield('header-custom')
     <!-- Menu -->
     <nav>

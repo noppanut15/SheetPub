@@ -20,7 +20,7 @@ html, *{
 	}
 	#section_1{
 		height: 100vh;
-		background-image: url('../images/bg-landing-page.png');
+		background-image: url('../images/bg-landing-page.jpg');
 	}
 	.wrapper{
 		padding-top: 8%;
