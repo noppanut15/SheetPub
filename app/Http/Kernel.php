@@ -54,5 +54,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'RedirectIfAuthenticated' => \sheetpub\Http\Middleware\RedirectIfAuthenticated::class,
         'RedirectIfNotAuthenticated' => \sheetpub\Http\Middleware\RedirectIfNotAuthenticated::class,
+        'RedirectIfFirstVisited' => \sheetpub\Http\Middleware\RedirectIfFirstVisited::class,
     ];
 }

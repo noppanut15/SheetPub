@@ -14,12 +14,14 @@
         <link rel="stylesheet" href="{{{ asset('css/animate.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/menu.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/font-awesome.min.css') }}}">
+        <link rel="stylesheet" href="{{{ asset('css/black-ribbon.css') }}}">
         @yield('custom-css')
         <script src ="{{{ asset('js/jquery-3.1.1.min.js') }}}" type="text/javascript"></script>
         <script src="{{{ asset('js/script-menu.js') }}}" ></script>
         @yield('custom-js')
     </head>
     <body>
+    <img src="{{ asset('images/black_ribbon_top_left.png') }}" class="black-ribbon stick-top stick-left"/>
     @yield('header-custom')
     <!-- Menu -->
     <nav>
@@ -129,5 +131,6 @@
     </nav>
     <!-- End Main Menu -->
     @yield('content')
-    </body>
+    
+</body>
 </html>

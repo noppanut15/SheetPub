@@ -256,7 +256,7 @@
 <footer>
 	<div class="write_by">
 		<span>
-		Copyright © 2016 SheetPub Team
+		Made with <i class="fa fa-heart" aria-hidden="true"></i>&nbsp;&nbsp; — &nbsp;&nbsp;SheetPub Team
 		</span>
 	</div>
 </footer>
