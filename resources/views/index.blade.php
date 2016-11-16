@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'แหล่งรวมชีทมากกว่า 1000+ ชีท ที่คุณจะได้ร่วมแบ่งปัน')
+@section('title', 'Share Once, Surf Anywhere, By Everyone')
 
 @section('custom-css')
 	<link rel="stylesheet" href="{{{ asset('css/style.css') }}}">
@@ -63,8 +63,8 @@
 				<img src="{{{ asset('images/01.png') }}}" alt="">
 			</div>
 			<h1>YOUR<span style="color:#ffc80a;">SHEET</span></h1>
-			<h2>Share Once, Surf Anywhere</h2>
-			<h2>ร่วมเรียนรู้และแบ่งปันเนื้อหาของคุณ ผ่านชีทออนไลน์ที่ทุกคนสามารถเข้าถึงได้ทุกที่ทุกเวลา</h2>
+			<h2>Share Once, Surf Anywhere, By Everyone</h2>
+			<h2>ร่วมเรียนรู้และแบ่งปันเนื้อหาของคุณผ่านชีทผับ แหล่งรวมชีทออนไลน์ที่ทุกคนสามารถเข้าถึงได้ทุกที่ทุกเวลา</h2>
 			<div class="button_bg ">
 				<a href="{{ url('/register') }}">REGISTER</a>	
 			</div>
