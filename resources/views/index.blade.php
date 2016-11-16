@@ -10,6 +10,7 @@
 	</style>
 @endsection
 @section('custom-js')
+	<script src="{{{ asset('js/script-index.js') }}}" ></script>
 	@if(Session::has('userId'))
 		<script src="{{{ asset('js/script-logedin.js') }}}" ></script>
 	@else

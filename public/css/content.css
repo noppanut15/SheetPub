@@ -239,13 +239,11 @@ text-align: center;
 
 .lernmore{
 	width: 100%;
-	/* height: 300px; */
 	overflow: hidden;
 	display: flex;
 	flex-direction: row;
 	background: #222222;
 	background-size: cover;
-	/* background-image: url(../images/lernmore.png); */
 }
 .btn_lernmore{
 	padding-top: 7%;
