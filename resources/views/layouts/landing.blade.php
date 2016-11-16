@@ -10,14 +10,9 @@
         <meta property="article:publisher" content="@yield('fb-og-author', 'SheetPub')" />
         <meta property="og:image" content="{{{ asset('images/fb-og.png') }}}" />
         <title>@yield('title') - SheetPub</title>
-        <link rel="stylesheet" href="{{{ asset('css/fonts.css') }}}">
-        <link rel="stylesheet" href="{{{ asset('css/animate.css') }}}">
-        <link rel="stylesheet" href="{{{ asset('css/menu.css') }}}">
-        <link rel="stylesheet" href="{{{ asset('css/font-awesome.min.css') }}}">
-        @yield('custom-css')
+        <link rel="stylesheet" href="{{{ asset('css/landing-page.css') }}}">
         <script src ="{{{ asset('js/jquery-3.1.1.min.js') }}}" type="text/javascript"></script>
-        <script src="{{{ asset('js/script-menu.js') }}}" ></script>
-        @yield('custom-js')
+        <script src="{{{ asset('js/landing-page.js') }}}" ></script>
     </head>
     <body>
 
