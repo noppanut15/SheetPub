@@ -89,17 +89,17 @@
 		</div>
 		
 		<div class="fanpage">
-			<a href="http://twitter.com/minimalmonkey" class="icon-button twitter">
+			<a href="http://twitter.com" target="_blank" class="icon-button twitter">
 			<i class="fa fa-twitter" aria-hidden="true"></i>
 			<span></span>
 			</a>
 
-			<a href="http://facebook.com" class="icon-button facebook">
+			<a href="http://facebook.com" target="_blank" class="icon-button facebook">
 			<i class="fa fa-facebook" aria-hidden="true"></i>
 			<span></span>
 			</a>
 
-			<a href="http://plus.google.com" class="icon-button google-plus">
+			<a href="http://plus.google.com" target="_blank" class="icon-button google-plus">
 			<i class="fa fa-google-plus" aria-hidden="true"></i>
 			<span></span>
 			</a>
