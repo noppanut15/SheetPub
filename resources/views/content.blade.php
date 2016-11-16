@@ -115,9 +115,9 @@
 				</li>
 				<li>
 					<p>
-						VOTE
+						QUALITY
 					</p>
-					<div id="rateYo"></div>
+					<div id="rateYo" style="margin-top: 5px;"></div>
 
 				</li>
 				<li>
