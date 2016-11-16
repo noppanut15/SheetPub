@@ -12,6 +12,7 @@
 */
 
 Route::get('/', [
+    'middleware' => 'RedirectIfFirstVisited',
     'uses' => 'IndexController@index'
 ]);
 

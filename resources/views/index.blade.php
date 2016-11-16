@@ -256,8 +256,9 @@
 <footer>
 	<div class="write_by">
 		<span>
-		Copyright © 2016 SheetPub Team
-		</span>
+		Made with <i class="fa fa-heart" style="color:#FF8C74;" aria-hidden="true"></i>&nbsp;&nbsp; — &nbsp;&nbsp;SheetPub Team
+		</span><br>
+		<span>SheetPub is a part of project in Information Technology Fundamentals subject, <a href="http://www.it.kmitl.ac.th" target="_blank" style="color: grey;">IT@KMITL</a>.</span>
 	</div>
 </footer>
 
