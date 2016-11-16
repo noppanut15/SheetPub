@@ -37,7 +37,7 @@
                             <li><a href="{{ url('/category') }}">CATEGORY</a></li>
                             <li><a href="{{ url('/trending') }}">TRENDING</a></li>
                         @if (Session::has('userId'))
-                            <li><a href="{{ url('/content/new') }}">NEW POST</a></li>
+                            <li><a href="{{ url('/content/new') }}">ADD NEW SHEET</a></li>
                             <li><a href="{{ url('/profile') }}">PROFILE</a></li>
                             <li><a href="{{ url('/logout') }}">LOGOUT</a></li>
                         @else
@@ -52,6 +52,9 @@
             <!-- Menu Left -->
             <div id="menu">
                 <ul>
+                	@if (Session::has('userId'))
+                	<li class="button_menu_invert"><a href="{{ url('/content/new') }}"><i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp; NEW SHEET</a></li>
+                	@endif
                     <li><a href="{{ url('/feed') }}">FEED</a></li>
                     <li>
                         <a href="#" class="category_menu">CATEGORY
@@ -104,9 +107,6 @@
 
                     <li class="menudrop_user">
                         <ul>
-                            <li>
-                                <a href="{{ url('/content/new') }}">NEW POST</a>
-                            </li>
                             <li>
                                 <a href="{{ url('/profile') }}">PROFILE</a>
                             </li>
