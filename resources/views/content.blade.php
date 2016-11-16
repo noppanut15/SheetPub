@@ -1,5 +1,9 @@
 @extends('layouts.app')
+
 @section('title', $content->topic)
+
+@section('fb-og-description', $content->description)
+@section('fb-og-author', $content->firstName.' '.$content->lastName)
 
 @section('custom-css')
 	<link rel="stylesheet" type="text/css" href="{{{ asset('css/content.css') }}}">

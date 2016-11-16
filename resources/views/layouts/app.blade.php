@@ -3,7 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SheetPub - @yield('title')</title>
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="@yield('fb-og-description', 'ร่วมเรียนรู้และแบ่งปันเนื้อหาของคุณผ่าน "ชีทผับ" แหล่งรวมชีทออนไลน์ที่ทุกคนสามารถเข้าถึงได้ทุกที่ทุกเวลา')" />
+        <meta property="article:author" content="@yield('fb-og-author', 'SheetPub')" />
+        <meta property="og:image" content="{{{ asset('images/fb-og.png') }}}" />
+        <title>@yield('title') - SheetPub</title>
         <link rel="stylesheet" href="{{{ asset('css/fonts.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/animate.css') }}}">
         <link rel="stylesheet" href="{{{ asset('css/menu.css') }}}">
