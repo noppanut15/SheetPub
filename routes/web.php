@@ -24,34 +24,42 @@ Route::get('content/view/{contentId}', [
 ]);
 
 Route::get('content/edit/{contentId}', [
+    'middleware' => 'RedirectIfNotAuthenticated',
     'uses' => 'ContentController@getEdit'
 ]);
 
 Route::post('content/edit/{contentId}', [
+    'middleware' => 'RedirectIfNotAuthenticated',
     'uses' => 'ContentController@postEdit'
 ]);
 
 Route::get('content/new', [
+    'middleware' => 'RedirectIfNotAuthenticated',
     'uses' => 'ContentController@getNew'
 ]);
 
 Route::post('content/new', [
+    'middleware' => 'RedirectIfNotAuthenticated',
     'uses' => 'ContentController@postNew'
 ]);
 
 Route::get('content/delete/{contentId}', [
+    'middleware' => 'RedirectIfNotAuthenticated',
     'uses' => 'ContentController@deleteContent'
 ]);
 
 Route::get('vote/{contentId}/{score}', [
+    'middleware' => 'RedirectIfNotAuthenticated',
     'uses' => 'VoteController@vote'
 ]);
 
 Route::get('profile/edit', [
+    'middleware' => 'RedirectIfNotAuthenticated',
     'uses' => 'UserProfile@showProfileEdit'
 ]);
 
 Route::post('profile/edit', [
+    'middleware' => 'RedirectIfNotAuthenticated',
     'uses' => 'UserProfile@postProfileEdit'
 ]);
 

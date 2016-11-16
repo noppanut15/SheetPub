@@ -10,6 +10,7 @@
 	</style>
 @endsection
 @section('custom-js')
+	<script src="{{{ asset('js/script-index.js') }}}" ></script>
 	@if(Session::has('userId'))
 		<script src="{{{ asset('js/script-logedin.js') }}}" ></script>
 	@else
@@ -61,8 +62,9 @@
 			<div class="number_step1">
 				<img src="{{{ asset('images/01.png') }}}" alt="">
 			</div>
-			<h1>GET<span style="color:#ffc80a;">STARTED</span></h1>
-			<h2>But I must explain to you how all this mistaken idea of denouncing </h2>
+			<h1>YOUR<span style="color:#ffc80a;">SHEET</span></h1>
+			<h2>Share Once, Surf Anywhere</h2>
+			<h2>ร่วมเรียนรู้และแบ่งปันเนื้อหาของคุณ ผ่านชีทออนไลน์ที่ทุกคนสามารถเข้าถึงได้ทุกที่ทุกเวลา</h2>
 			<div class="button_bg ">
 				<a href="{{ url('/register') }}">REGISTER</a>	
 			</div>
@@ -79,25 +81,25 @@
 
 	<div class="warpper">
 		<div class="instepTWO">
-		<h1>FOLLOW<span style="color:#fff;">ME</span></h1>
-		<h2>Type $0 to download for free, or any sum if you want to support us and donate</h2>
+		<h1>FOLLOW<span style="color:#fff;">US</span></h1>
+		<h2>ไม่พลาดทุกข่าวสารความเคลื่อนไหว และชีทใหม่ๆ ที่พร้อมจะแบ่งปันให้กับคุณ</h2>
 
 		<div class="number_step2">
 				<img src="{{{ asset('images/02.png') }}}" alt="">
 		</div>
 		
 		<div class="fanpage">
-			<a href="http://twitter.com/minimalmonkey" class="icon-button twitter">
+			<a href="http://twitter.com" target="_blank" class="icon-button twitter">
 			<i class="fa fa-twitter" aria-hidden="true"></i>
 			<span></span>
 			</a>
 
-			<a href="http://facebook.com" class="icon-button facebook">
+			<a href="http://facebook.com" target="_blank" class="icon-button facebook">
 			<i class="fa fa-facebook" aria-hidden="true"></i>
 			<span></span>
 			</a>
 
-			<a href="http://plus.google.com" class="icon-button google-plus">
+			<a href="http://plus.google.com" target="_blank" class="icon-button google-plus">
 			<i class="fa fa-google-plus" aria-hidden="true"></i>
 			<span></span>
 			</a>
@@ -115,13 +117,10 @@
 		<div class="movestep3">
 	<div class="warpper">
 		<div class="instepTHREE">
-			<h1>RECENT
-				<span style="color:#ffc80a;">
-				POST
-				</span>
+			<h1>FRESH<span style="color:#ffc80a;">SHEET</span>
 			</h1>
-			<span>
-				It may be the media's veruse of words like "breakthrough"?
+			<span style="font-family: 'Supermarket';">
+				ชีทใหม่ล่าสุด
 			</span>
 		</div>
 
@@ -130,9 +129,6 @@
 
 	<div class="more_co">
 	@foreach ($contents as $content)
-		@php
-			$score = $content->voteScore/max(1, $content->votePopulation)
-		@endphp
 		<!-- CONTENT CARD -->
 			<div class="content">
 					<!-- Date And Time -->
@@ -143,11 +139,11 @@
 					<!-- VOTE -->
 					<div class="star_vote">
 						<ul>
-							<li><i style="@if($score>=1) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i style="@if($score>=2) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i style="@if($score>=3) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i style="@if($score>=4) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
-							<li><i style="@if($score==5) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i style="@if($content->score>=1) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i style="@if($content->score>=2) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i style="@if($content->score>=3) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i style="@if($content->score>=4) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
+							<li><i style="@if($content->score==5) color:#fff; @endif" class="fa fa-star" aria-hidden="true"></i></li>
 						</ul>
 					</div>
 					<!-- Thumbnail -->
@@ -168,7 +164,11 @@
 							<a href="{{ url('content/view') }}/{{ $content->contentId }}">
 								<h1>{{ $content->topic }}</h1>
 							</a>
-							<h2>{{ $content->description }}</h2>
+							@if (mb_strlen($content->description, 'UTF-8') > 140)
+								<h2>{{ mb_substr($content->description, 0, 140, 'UTF-8') }}...</h2>
+							@else
+								<h2>{{ $content->description }}</h2>
+							@endif
 						</div>
 					</div>
 			</div>
@@ -185,13 +185,9 @@
 <section id="step_4">
 	<div class="warpper">
 		<div class="instepFOUR">
-			<h1>
-			OUR 
-			<span style="color:#fff;">
-			TEAM
-			</span>
+			<h1>OUR<span style="color:#fff;">TEAM</span>
 			</h1>
-			<span>It may be the media's veruse of words like "breakthrough"?</span>
+			<!-- <span>It may be the media's veruse of words like "breakthrough"?</span> -->
 			
 		</div>
 	</div>
@@ -206,7 +202,7 @@
     					<h4>Pongpanot Na Ubon</h4>
     					<h2>PLENG</h2>
   					</figcaption>
-  					<a href="#"></a>
+  					<a href="https://www.facebook.com/pleng.prongpanot" target="_blank"></a>
 				</figure>			
 			</li>
 
@@ -216,7 +212,7 @@
     					<h4>Noppanut Ploywong</h4>
     					<h2>TOP</h2>
   					</figcaption>
-  					<a href="#"></a>
+  					<a href="https://www.facebook.com/noppanut" target="_blank"></a>
 				</figure>	
 			</li>
 
@@ -226,7 +222,7 @@
     					<h4>Paroot Satjawanit‎</h4>
     					<h2>SONG</h2>
   					</figcaption>
-  					<a href="#"></a>
+  					<a href="https://www.facebook.com/justdrinktoxic" target="_blank"></a>
 				</figure>	
 			</li>
 
@@ -236,7 +232,7 @@
     					<h4>Pongsaton Petsuk</h4>
     					<h2>PONG</h2>
   					</figcaption>
-  					<a href="#"></a>
+  					<a href="https://www.facebook.com/Pongdekba" target="_blank"></a>
 				</figure>	
 			</li>
 
@@ -246,7 +242,7 @@
     					<h4>Thanawat Loardkawe</h4>
     					<h2>SKY DOG</h2>
   					</figcaption>
-  					<a href="#"></a>
+  					<a href="https://www.facebook.com/hideokyjima" target="_blank"></a>
 				</figure>	
 			</li>
 

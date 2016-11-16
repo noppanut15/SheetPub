@@ -127,6 +127,8 @@ body{
 	font-size: 27px;
 	margin-top: 15px;
 	padding-bottom: 3px;
+	line-height: 1.2em;
+	margin-bottom: 10px;
 }
 
 .description-post a {
