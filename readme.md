@@ -1,27 +1,69 @@
-# Laravel PHP Framework
+# SheetPub
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Introduction
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+SheetPub is a part of project in Information Technology Fundamentals subject, IT@KMITL.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Share Once, Surf Anywhere, By Everyone is the main concept of SheetPub.
 
-## Official Documentation
+## Running the App
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+### Requirement
+1. PHP >= 5.6.4
+2. OpenSSL PHP Extension
+3. PDO PHP Extension
+4. Mbstring PHP Extension
+5. Tokenizer PHP Extension
+6. XML PHP Extension
+7. Composer
 
-## Contributing
+### Runing this app
+1. Install the defined dependencies.
+```
+# Using composer
+composer install --no-dev
+```
+2. Environment configuration.
+```
+# Create .env file if not exist.
+APP_ENV=production
+APP_KEY=base64:[YOUR_KEY]
+APP_DEBUG=false
+APP_LOG_LEVEL=debug
+APP_URL=http://localhost
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+DB_CONNECTION=mysql
+DB_HOST=[DATABASE_HOST]
+DB_PORT=3306
+DB_DATABASE=[DATABASE_NAME]
+DB_USERNAME=[DATABASE_USERNAME]
+DB_PASSWORD=[DATABASE_PASSWORD]
 
-## Security Vulnerabilities
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
 
-## License
+MAIL_DRIVER=smtp
+MAIL_HOST=mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+PUSHER_APP_ID=
+PUSHER_KEY=
+PUSHER_SECRET=
+```
+
+3. MySQL structure import.
+4. Launch the project in path **/public**
+
+### Tools.
+
+1. Laravel 5.3
+2. jQuery 3.1.1
